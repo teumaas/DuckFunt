@@ -3,9 +3,9 @@
 >- **Folder structure:** 
 >- \\root
 >- \-\docs - **"Documentation."**
->- \-\files - **"Code."**
+>- \-\files - **"Project Code."**
 >- \-\src - **"Textures, Sounds, Etc."**
->- \-\test - **"Experimental stuff"**
+>- \-\test - **"Experimental stuff."**
 >- \-\tools - **"Needed tools for development."**
 
 ----------
