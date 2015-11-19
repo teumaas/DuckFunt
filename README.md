@@ -5,7 +5,7 @@
 >- \-\docs - **"Documentation."**
 >- \-\files - **"Code."**
 >- \-\src - **"Textures, Sounds, Etc."**
->- \-\test - **"Final Release ready for a test."**
+>- \-\test - **"Experimental stuff"**
 >- \-\tools - **"Needed tools for development."**
 
 ----------
