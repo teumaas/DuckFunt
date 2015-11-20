@@ -15,6 +15,11 @@ namespace intro_DuckFunt
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        SpriteFont spriteFont;
+        Texture2D txt2d;
+        Rectangle rect;
+        Vector2 vec2;
+        
 
         public Game1()
         {
@@ -30,9 +35,28 @@ namespace intro_DuckFunt
 
         protected override void LoadContent()
         {
+            int i = 0;
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            
 
+            string txt = System.IO.File.ReadAllText("story.txt");
+            char[] text = new char[txt.Length];
+
+            
+            rect = new Rectangle(0,0,851, 1580);
+            
+
+            foreach (char letter in txt)
+            {
+                text[i] = letter;
+                i++;
+
+                spriteFont = Content.Load<SpriteFont>(letter.ToString());
+        
+                vec2 = new Vector2(graphics.GraphicsDevice.Viewport.Width / 2,
+                    graphics.GraphicsDevice.Viewport.Height / 2);
+            }
         }
 
         protected override void UnloadContent()
@@ -52,7 +76,7 @@ namespace intro_DuckFunt
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
+            
 
             base.Draw(gameTime);
         }

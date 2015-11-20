@@ -81,6 +81,8 @@
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
     </Content>
+    <Content Include="story.txt" />
+    <Content Include="test_intro.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\intro_DuckFuntContent\intro_DuckFuntContent.contentproj">
