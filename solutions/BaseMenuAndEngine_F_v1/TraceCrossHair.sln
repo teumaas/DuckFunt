@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceCrossHair", "Plaatjes\Plaatjes\TraceCrossHair.csproj", "{82E43CD3-48B2-4326-ACA0-213B73BCA27B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaatjesContent", "Plaatjes\PlaatjesContent\PlaatjesContent.contentproj", "{D2371D33-4E4F-4BF3-929B-C8E75C49A1C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82E43CD3-48B2-4326-ACA0-213B73BCA27B}.Debug|x86.ActiveCfg = Debug|x86
+		{82E43CD3-48B2-4326-ACA0-213B73BCA27B}.Debug|x86.Build.0 = Debug|x86
+		{82E43CD3-48B2-4326-ACA0-213B73BCA27B}.Release|x86.ActiveCfg = Release|x86
+		{82E43CD3-48B2-4326-ACA0-213B73BCA27B}.Release|x86.Build.0 = Release|x86
+		{D2371D33-4E4F-4BF3-929B-C8E75C49A1C9}.Debug|x86.ActiveCfg = Debug|x86
+		{D2371D33-4E4F-4BF3-929B-C8E75C49A1C9}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
