@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MenuMaking", "MenuMaking\MenuMaking\MenuMaking.csproj", "{567110B1-A159-404C-ACAE-B8C89D5B594D}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "MenuMakingContent", "MenuMaking\MenuMakingContent\MenuMakingContent.contentproj", "{F9182FF1-DB58-4B16-8045-5B317A0EEEFB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{567110B1-A159-404C-ACAE-B8C89D5B594D}.Debug|x86.ActiveCfg = Debug|x86
+		{567110B1-A159-404C-ACAE-B8C89D5B594D}.Debug|x86.Build.0 = Debug|x86
+		{567110B1-A159-404C-ACAE-B8C89D5B594D}.Release|x86.ActiveCfg = Release|x86
+		{567110B1-A159-404C-ACAE-B8C89D5B594D}.Release|x86.Build.0 = Release|x86
+		{F9182FF1-DB58-4B16-8045-5B317A0EEEFB}.Debug|x86.ActiveCfg = Debug|x86
+		{F9182FF1-DB58-4B16-8045-5B317A0EEEFB}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
