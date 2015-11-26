@@ -1,0 +1,11 @@
+Original file properties
+
+Type		Flac (.flac)
+Duration	00:26:569
+Filesize	1.3 MB
+Samplerate	48000.0 Hz
+Bitdepth	16 bit
+Channels	Stereo
+
+source: 	https://freesound.org/people/qubodup/sounds/182794/
+license:	Creative Commons 0
