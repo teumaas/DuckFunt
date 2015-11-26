@@ -9,6 +9,8 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using System.IO;
+using System.Diagnostics;
+using System.Threading.Tasks;
 
 
 namespace intro_DuckFunt
@@ -20,16 +22,30 @@ namespace intro_DuckFunt
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        SpriteBatch heroBatch;
         Rectangle textBox;
+        Rectangle back;
+        Rectangle destRec;
+        Rectangle heroRec;
+        Texture2D pic;
+        Texture2D heroSheet;
         SpriteFont font;
         String text;
         String parsedText;
         String typedText;
         SoundEffect snd;
+        Vector2 pos;
+        SoundEffectInstance soundEffectInstance;
         double typedTextLength;
         int delayInMilliseconds;
         bool isDoneDrawing;
-        SoundEffectInstance soundEffectInstance;
+        float elapsed;
+        float delay = 300f;
+        int frames;
+        int oneFrame;
+        int recWidth;
+        int recHeight;
+        int frameHeight;
 
         public Game1()
         {
@@ -39,8 +55,24 @@ namespace intro_DuckFunt
 
         protected override void Initialize()
         {
-            textBox = new Rectangle(10, 10, 300, 300);
+            frames = 1;
+            frameHeight = 50;
+            heroSheet = Content.Load<Texture2D>("sprites");
+            textBox = new Rectangle(100, 50, 32, 32);
+            back = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
+            pos = new Vector2(0, 0);
+            oneFrame = heroSheet.Width / 3;
 
+            recWidth = oneFrame;
+            recHeight = frameHeight;
+
+            
+            
+            
+            //1239
+            //314
+            //870
+            //1184
 
             base.Initialize();
         }
@@ -48,15 +80,16 @@ namespace intro_DuckFunt
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            heroBatch = new SpriteBatch(GraphicsDevice);
 
             font = Content.Load<SpriteFont>("spriteFont1");
             text = File.ReadAllText("story.txt");
             snd = Content.Load<SoundEffect>("click2");
+            pic = Content.Load<Texture2D>("mars");
             soundEffectInstance = snd.CreateInstance();
             parsedText = parseText(text);
-            delayInMilliseconds = 50;
+            delayInMilliseconds = 25;
             isDoneDrawing = false;
-            
         }
 
         protected override void UnloadContent()
@@ -66,8 +99,40 @@ namespace intro_DuckFunt
 
         protected override void Update(GameTime gameTime)
         {
+            
+
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+            {
                 this.Exit();
+            }
+
+            elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            if (pos.Y >= -85)
+            {
+                pos += new Vector2(-0.5f, -0.2f);
+                
+
+                if (elapsed >= delay)
+                {
+                    recWidth += 2;
+                    recHeight += 3;
+                    if (frames >= 2)
+                    {
+                        frames = 1;
+                        
+                    }
+                    else
+                    {
+                        frames++;
+                    }
+                    elapsed = 0;
+                }
+            }
+            else
+            {
+                frames = 0;
+            }
+            
 
             if (!isDoneDrawing)
             {
@@ -84,23 +149,40 @@ namespace intro_DuckFunt
                         typedTextLength = parsedText.Length;
                         isDoneDrawing = true;
                     }
-                    
+
                     typedText = parsedText.Substring(0, (int)typedTextLength);
-                    
+
                 }
             }
+
+
+            if (typedTextLength >= 250 && typedTextLength <= 400)
+            {
+                textBox.Y--;
+            }
+
+
+            heroRec = new Rectangle(10, 150, recWidth, recHeight);   //oneFrame, heroSheet.Height
+
+            destRec = new Rectangle(oneFrame * frames, 0, oneFrame, frameHeight);
+
+            
+
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Black);
+            GraphicsDevice.Clear(Color.White);
 
             spriteBatch.Begin();
+            spriteBatch.Draw(pic, back, Color.Gray);
             spriteBatch.DrawString(font, typedText, new Vector2(textBox.X, textBox.Y), Color.White);
-            soundEffectInstance.Play();
             spriteBatch.End();
-            
+
+            heroBatch.Begin();
+            heroBatch.Draw(heroSheet, heroRec, destRec, Color.White, 0f, pos, SpriteEffects.None, 0f); //    new rectangle instance magic numbers
+            heroBatch.End();
 
             base.Draw(gameTime);
         }
@@ -115,13 +197,24 @@ namespace intro_DuckFunt
             {
                 if (font.MeasureString(line + word).Length() > textBox.Width)
                 {
-                    returnString = returnString + line + '\n';
+                    returnString = returnString + line;
                     line = String.Empty;
                 }
 
                 line = line + word + ' ';
             }
             return returnString + line;
+        }
+
+        public static Task Delay(double milliseconds)
+        {
+            var tcs = new TaskCompletionSource<bool>();
+            System.Timers.Timer timer = new System.Timers.Timer();
+            timer.Elapsed += (o, e) => tcs.TrySetResult(true);
+            timer.Interval = milliseconds;
+            timer.AutoReset = false;
+            timer.Start();
+            return tcs.Task;
         }
 
     }

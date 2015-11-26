@@ -81,6 +81,13 @@
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
     </Content>
+    <None Include="mars.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="sprites.png" />
+    <Content Include="sprite_1.png" />
+    <Content Include="sprite_2.png" />
+    <Content Include="sprite_3.png" />
     <Content Include="story.txt" />
     <Content Include="test_intro.png" />
     <Content Include="tick_sound.wav" />
