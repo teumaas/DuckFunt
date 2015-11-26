@@ -1,0 +1,10 @@
+Original file properties
+
+Type		Mp3 (.mp3)
+Duration	00:04:330
+Filesize	171.6 KB
+Bitrate		1500 kbps
+Channels	Stereo
+
+source: 	https://freesound.org/people/cydon/sounds/268555/
+license:	Creative Commons 0
