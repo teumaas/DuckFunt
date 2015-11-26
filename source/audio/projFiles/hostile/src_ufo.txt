@@ -1,0 +1,11 @@
+Original file properties
+
+Type		Wave (.wav)
+Duration	00:17:554
+Filesize	3.0 MB
+Samplerate	44100.0 Hz
+Bitdepth	16 bit
+Channels	Stereo
+
+source: 	https://freesound.org/people/Erratic/sounds/235/
+license:	Creative Commons 0
