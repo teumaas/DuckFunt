@@ -93,16 +93,19 @@ namespace MenuMaking
             currentMouseState = Mouse.GetState();
             if (currentMouseState.LeftButton == ButtonState.Pressed && oldMouseState.LeftButton == ButtonState.Released)
             {
-
-                for (int i = 0; i < MenuItems.Length; i++)
+                if (MenuEnabled)
                 {
-                    if (currentMouseState.Y > (StartLocY + (i * 50)))
+                    for (int i = 0; i < MenuItems.Length; i++)
                     {
-                        Window.Title = "You clicked: " + MenuItems[i];
-                        MenuEnabled = false;
-                        OnClickItem(i);
+                        if (currentMouseState.Y > (StartLocY + (i * 50)))
+                        {
+                            Window.Title = "You clicked: " + MenuItems[i];
+                            MenuEnabled = false;
+                            OnClickItem(i);
+                        }
                     }
                 }
+                
             }
             base.Update(gameTime);
         }
@@ -125,21 +128,20 @@ namespace MenuMaking
                     spriteBatch.Begin();
                     string TempMenuItem = MenuItems[i];
                     Vector2 size = font.MeasureString(TempMenuItem);
-                    // StartLocY = StartLocY + Convert.ToInt32(size.Y);
                     CurY = StartLocY + ((int)size.Y * i);
                     spriteBatch.DrawString(font, TempMenuItem, new Vector2(MiddleX - Convert.ToInt32(size.X / 2), CurY), Color.Black);
                     Lettersize = (int)size.X;
                     spriteBatch.End();
                 }
             }
-            
+            circle = new Circle(100f, 100f, 20, graphics);
+            circle.Draw();
                 
                 spriteBatch.Begin();
                 CursorUpdater Crosshair = new CursorUpdater();
                 spriteBatch.Draw(Cross, new Rectangle(Crosshair.GetCursX() - CrossSize / 2, Crosshair.GetCursY() - CrossSize / 2, CrossSize, CrossSize), Color.White);
 
-                circle = new Circle(100f, 100f, 20, graphics);
-                circle.Draw();
+                
                 spriteBatch.End();
                 base.Draw(gameTime);
         }
@@ -154,8 +156,21 @@ namespace MenuMaking
             
         }
         void OnClickItem(int Num)
-        { 
-            
+        {
+            switch (Num)
+            {
+                case 1:
+                    break;
+                case 2:
+                    Window.Title = "Hello";
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
