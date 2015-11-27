@@ -1,3 +1,15 @@
-Plak hier url's van gewenste geluiden. (doel)spatie(url)spatie(tijd)
+Plak hier url's van gewenste geluiden. (doel)tab(url)tab(tijd)
 
-m95 https://www.youtube.com/watch?v=63cJbjgiOHE 0:35
+m95+reload		https://www.youtube.com/watch?v=63cJbjgiOHE	0:35
+rpg			
+minigun			
+lasergun		
+pistol reload		
+mp5+ak47 reload		
+lasergun cooldown	
+hero take aim		
+hero take cover		
+hero take damage	
+boss idle		
+boss attack		
+boss die		
