@@ -1,3 +1,6 @@
+#define DELAY
+#define PARSE
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -63,8 +66,10 @@ namespace intro_DuckFunt
             pos = new Vector2(0, 0);
             oneFrame = heroSheet.Width / 3;
 
-            recWidth = oneFrame;
-            recHeight = frameHeight;
+            recWidth = oneFrame / 2;
+            recHeight = frameHeight / 2;
+
+            
 
             
             
@@ -109,7 +114,7 @@ namespace intro_DuckFunt
             elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             if (pos.Y >= -85)
             {
-                pos += new Vector2(-0.5f, -0.2f);
+                pos += new Vector2(-0.0f, -0.2f);
                 
 
                 if (elapsed >= delay)
@@ -162,7 +167,7 @@ namespace intro_DuckFunt
             }
 
 
-            heroRec = new Rectangle(10, 150, recWidth, recHeight);   //oneFrame, heroSheet.Height
+            heroRec = new Rectangle((GraphicsDevice.Viewport.Width / 2) - (heroSheet.Width / 2), 150, recWidth, recHeight);   //oneFrame, heroSheet.Height
 
             destRec = new Rectangle(oneFrame * frames, 0, oneFrame, frameHeight);
 
@@ -187,6 +192,7 @@ namespace intro_DuckFunt
             base.Draw(gameTime);
         }
 
+#if PARSE
         private String parseText(String text)
         {
             String line = String.Empty;
@@ -205,7 +211,9 @@ namespace intro_DuckFunt
             }
             return returnString + line;
         }
+#endif
 
+#if DELAY
         public static Task Delay(double milliseconds)
         {
             var tcs = new TaskCompletionSource<bool>();
@@ -216,6 +224,6 @@ namespace intro_DuckFunt
             timer.Start();
             return tcs.Task;
         }
-
+#endif
     }
 }
