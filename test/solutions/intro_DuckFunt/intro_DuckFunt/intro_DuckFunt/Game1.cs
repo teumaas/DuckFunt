@@ -66,18 +66,8 @@ namespace intro_DuckFunt
             pos = new Vector2(0, 0);
             oneFrame = heroSheet.Width / 3;
 
-            recWidth = oneFrame / 2;
-            recHeight = frameHeight / 2;
-
-            
-
-            
-            
-            
-            //1239
-            //314
-            //870
-            //1184
+            recWidth = oneFrame / 3;
+            recHeight = frameHeight / 3;
 
             base.Initialize();
         }
@@ -90,7 +80,7 @@ namespace intro_DuckFunt
             font = Content.Load<SpriteFont>("spriteFont1");
             text = File.ReadAllText("story.txt");
             snd = Content.Load<SoundEffect>("click2");
-            pic = Content.Load<Texture2D>("mars");
+            pic = Content.Load<Texture2D>("earth");
             soundEffectInstance = snd.CreateInstance();
             parsedText = parseText(text);
             delayInMilliseconds = 25;
@@ -112,19 +102,23 @@ namespace intro_DuckFunt
             }
 
             elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            if (pos.Y >= -85)
+
+            if (pos.Y >= -50 && typedTextLength >= 250)
             {
-                pos += new Vector2(-0.0f, -0.2f);
-                
+                pos += new Vector2(-0.0f, -0.15f);
 
                 if (elapsed >= delay)
                 {
+                    if (recHeight >= 46)
+                    {
+                        recHeight += 1;
+                        recWidth += 1;
+                    }
                     recWidth += 2;
                     recHeight += 3;
                     if (frames >= 2)
                     {
                         frames = 1;
-                        
                     }
                     else
                     {
@@ -137,7 +131,6 @@ namespace intro_DuckFunt
             {
                 frames = 0;
             }
-            
 
             if (!isDoneDrawing)
             {
@@ -167,7 +160,7 @@ namespace intro_DuckFunt
             }
 
 
-            heroRec = new Rectangle((GraphicsDevice.Viewport.Width / 2) - (heroSheet.Width / 2), 150, recWidth, recHeight);   //oneFrame, heroSheet.Height
+            heroRec = new Rectangle(GraphicsDevice.Viewport.Width / 2, 300, recWidth, recHeight);   //oneFrame, heroSheet.Height
 
             destRec = new Rectangle(oneFrame * frames, 0, oneFrame, frameHeight);
 
