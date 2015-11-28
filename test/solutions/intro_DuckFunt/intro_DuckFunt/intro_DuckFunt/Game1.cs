@@ -13,6 +13,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using System.IO;
 using System.Diagnostics;
+using System.Threading;
 using System.Threading.Tasks;
 
 
@@ -49,6 +50,9 @@ namespace intro_DuckFunt
         int recWidth;
         int recHeight;
         int frameHeight;
+        int i;
+        byte R, G, B;
+        Color color;
 
         public Game1()
         {
@@ -58,12 +62,18 @@ namespace intro_DuckFunt
 
         protected override void Initialize()
         {
+            R = 0;
+            G = 0;
+            B = 0;
+            i = 0;
+
             frames = 1;
             frameHeight = 50;
             heroSheet = Content.Load<Texture2D>("sprites");
             textBox = new Rectangle(100, 50, 32, 32);
             back = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
             pos = new Vector2(0, 0);
+            color = Color.White;
             oneFrame = heroSheet.Width / 3;
 
             recWidth = oneFrame / 3;
@@ -94,7 +104,6 @@ namespace intro_DuckFunt
 
         protected override void Update(GameTime gameTime)
         {
-            
 
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
             {
@@ -103,7 +112,26 @@ namespace intro_DuckFunt
 
             elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
-            if (pos.Y >= -50 && typedTextLength >= 250)
+
+            
+                if (i <= 154)
+                {
+                    i++;
+
+                    R += 1;
+                    G += 1;
+                    B += 1;
+
+                    color.R = R;
+                    color.G = G;
+                    color.B = B;
+
+                    DrawBack();
+                }
+            
+
+
+            if (pos.Y >= -50 && typedTextLength >= 200 && i >= 154)
             {
                 pos += new Vector2(-0.0f, -0.15f);
 
@@ -132,6 +160,7 @@ namespace intro_DuckFunt
                 frames = 0;
             }
 
+
             if (!isDoneDrawing)
             {
                 if (delayInMilliseconds == 0)
@@ -154,27 +183,36 @@ namespace intro_DuckFunt
             }
 
 
+
             if (typedTextLength >= 250 && typedTextLength <= 400)
             {
                 textBox.Y--;
             }
 
-
-            heroRec = new Rectangle(GraphicsDevice.Viewport.Width / 2, 300, recWidth, recHeight);   //oneFrame, heroSheet.Height
-
+            heroRec = new Rectangle(GraphicsDevice.Viewport.Width / 2, 300, recWidth, recHeight);
             destRec = new Rectangle(oneFrame * frames, 0, oneFrame, frameHeight);
 
-            
+            if (pos.Y <= -50 && R > 0)
+            {
+                R -= 1;
+                G -= 1;
+                B -= 1;
+
+                color.R = R;
+                color.G = G;
+                color.B = B;
+
+                DrawBack();
+            }
 
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.White);
 
             spriteBatch.Begin();
-            spriteBatch.Draw(pic, back, Color.Gray);
+            spriteBatch.Draw(pic, back, color);
             spriteBatch.DrawString(font, typedText, new Vector2(textBox.X, textBox.Y), Color.White);
             spriteBatch.End();
 
@@ -183,6 +221,13 @@ namespace intro_DuckFunt
             heroBatch.End();
 
             base.Draw(gameTime);
+        }
+
+        private void DrawBack()
+        {
+            spriteBatch.Begin();
+            spriteBatch.Draw(pic, back, color);
+            spriteBatch.End();
         }
 
 #if PARSE
