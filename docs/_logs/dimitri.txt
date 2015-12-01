@@ -7,3 +7,12 @@
 20-11
 0840 onderzoeken extensies geluid
 1200 _/onderzoeken extensies geluid
+
+30-11
+start sprint 2
+
+01-12
+1000 burndown chart
+1100 _/burndown chart
+1100 tasks
+1240 /tasks
