@@ -37,7 +37,7 @@ namespace MenuMaking
             InitializeBasicEffect();
             InitializeVertices();
         }
-
+         
         private void InitializeBasicEffect()
         {
             effect = new BasicEffect(graphics.GraphicsDevice);
