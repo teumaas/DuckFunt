@@ -1,0 +1,11 @@
+Original file properties
+
+Type		Wave (.wav)
+Duration	00:01:497
+Filesize	129.1 KB
+Samplerate	22050.0 Hz
+Bitdepth	16 bit
+Channels	Stereo
+
+source: 	https://freesound.org/people/pepv/sounds/205013/
+license:	Creative Commons 0
