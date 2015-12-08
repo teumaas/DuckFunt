@@ -66,7 +66,7 @@ namespace MenuMaking
             rect = new Rectangle(0, 0, 100, 100);
            // drawableRectangle = new Texture2D(GraphicsDevice, 1, );
             colori = Color.White;
-           
+           // Font moet vooraf geinstalleerd zijn, font staat in recourses
             font = Content.Load<SpriteFont>("MenuFont");
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
