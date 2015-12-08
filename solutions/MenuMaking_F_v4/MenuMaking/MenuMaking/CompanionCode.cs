@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MenuMaking
 {
-    class DogAI
+    class CompanionCode
     {
     }
 }

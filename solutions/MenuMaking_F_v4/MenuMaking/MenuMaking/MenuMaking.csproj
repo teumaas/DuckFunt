@@ -74,7 +74,7 @@
   <ItemGroup>
     <Compile Include="Circle.cs" />
     <Compile Include="CursorUpdater.cs" />
-    <Compile Include="DogAI.cs" />
+    <Compile Include="CompanionCode.cs" />
     <Compile Include="Enemies.cs" />
     <Compile Include="GameComponent1.cs" />
     <Compile Include="Menu.cs" />
