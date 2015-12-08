@@ -15,23 +15,28 @@ namespace MenuMaking
     /// This is the main type for your game
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
+    
     {
+        void Window_ClientSizeChanged(object sender, EventArgs e)
+        {
+            // Make changes to handle the new window size.            
+        }
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Texture2D Cross;
-        int Lettersize;
-        bool BoolMenuEnabled = true;
-        int StartLocY;
-        string[] MenuItems = { "Start game", "Local Leadeboard", "Settings", "Itens" };
+        Texture2D crossHair;
+        Texture2D backGround;
+        int lettersize;
+        bool boolMenuEnabled = true;
+
+        int startLocY;
+        string[] menuItems = { "Start game", "Local Leadeboard", "Settings", "Itens" };
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             graphics.IsFullScreen = false;
-            
-            
-          //  menu.MiddleX = GraphicsDevice.Viewport.Bounds.Width / 2;
-           // menu.StartLocY = GraphicsDevice.Viewport.Bounds.Height / 4;
+            //StartLocY = menu.StartLocY;
+
             
         }
 
@@ -56,28 +61,21 @@ namespace MenuMaking
         Menu menu;
         protected override void LoadContent()
         {
-
-            
+            this.Window.AllowUserResizing = true;
+            this.Window.ClientSizeChanged += new EventHandler<EventArgs>(Window_ClientSizeChanged);
+            rect = new Rectangle(0, 0, 100, 100);
+           // drawableRectangle = new Texture2D(GraphicsDevice, 1, );
+            colori = Color.White;
+           
             font = Content.Load<SpriteFont>("MenuFont");
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
            // spriteBatch.Begin();
-         Menu menu = new Menu(Content, graphics, spriteBatch); // maakt een nieuw menu item en geeft alles door wat nodig is om items te spawnen
-           // if (BoolMenuEnabled)
-            //{
-             //   menu.MenuEnabled(spriteBatch);  
-            //}
-            
-           // Menu menu = new Menu();
-            StartLocY = menu.StartLocY;
-           // menu.MenuEnabled(true, spriteBatch);
-            //spriteBatch.DrawString(font, "font", new Vector2(100, 100), Color.Black);
-           // BG = Content.Load<Texture2D>("runway");
-            
-            Cross = Content.Load<Texture2D>("Crosshair");
-            //spriteBatch.End();
-         //   menu = new Menu(Content, graphics, spriteBatch);
-            // TODO: use this.Content to load your game content here
+            Menu menu = new Menu(Content, graphics, spriteBatch); // maakt een nieuw menu item en geeft alles door wat nodig is om items te spawnen
+            startLocY = menu.startLocY;
+            crossHair = Content.Load<Texture2D>("Crosshair");
+            backGround = Content.Load<Texture2D>("earth_BG_MainMenu");
+
         }
 
         /// <summary>
@@ -107,16 +105,16 @@ namespace MenuMaking
             
             if (currentMouseState.LeftButton == ButtonState.Pressed && oldMouseState.LeftButton == ButtonState.Released) // Als mouse butten gereleased is
             {
-                if (BoolMenuEnabled)
+                if (boolMenuEnabled)
                 {
                     // Bepaalt op welk item er geklikt is door middel van hoogte van de muis
-                    for (int i = 0; i < MenuItems.Length; i++) 
+                    for (int i = 0; i < menuItems.Length; i++) 
                     {
-                        if (currentMouseState.Y > (StartLocY + (i * 50))) 
+                        if (currentMouseState.Y > (startLocY + (i * 50))) 
                         {
-                            Window.Title = "You clicked: " + MenuItems[i];
-                            BoolMenuEnabled = false;
-                            menu.LaunchItem(i);
+                            Window.Title = "You clicked: " + menuItems[i];
+                            boolMenuEnabled = false;
+                            OnMainMenuClick(i);
                         }
                     }
                 }
@@ -129,34 +127,19 @@ namespace MenuMaking
         /// This is called when the game should draw itself.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        int CurY;
+        int curY;
        
-        int CrossSize = 75;
-        Circle circle;
+        int crossSize = 75;
+        Rectangle rect;
+        Texture2D drawableRectangle;
+        Color colori;
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            //if (MenuEnabled)
-            //{
-            //    for (int i = 0; i < MenuItems.Length; i++)
-            //    {
-            //        spriteBatch.Begin();
-            //        string TempMenuItem = MenuItems[i];
-            //        Vector2 size = font.MeasureString(TempMenuItem);
-            //        CurY = StartLocY + ((int)size.Y * i);
-            //        spriteBatch.DrawString(font, TempMenuItem, new Vector2(MiddleX - Convert.ToInt32(size.X / 2), CurY), Color.Black);
-            //        Lettersize = (int)size.X;
-            //        spriteBatch.End();
-            //    }
-            //}
-
-            
-          //  Menu menu = new Menu(Content);
-          
-            //MenuEnabled(true, spriteBatch);
-            circle = new Circle(100f, 100f, 20, graphics);
-            circle.Draw();
-            if (BoolMenuEnabled)
+            spriteBatch.Begin();
+            spriteBatch.Draw(backGround, new Rectangle(0, 0, graphics.GraphicsDevice.Viewport.Width, graphics.GraphicsDevice.Viewport.Height), Color.White);
+            spriteBatch.End();
+            if (boolMenuEnabled)
             {
                 Menu menu = new Menu(Content, graphics, spriteBatch);
                 menu.MenuEnabled(spriteBatch);
@@ -165,11 +148,16 @@ namespace MenuMaking
             
                 spriteBatch.Begin();
                 CursorUpdater Crosshair = new CursorUpdater(); // Staat het programma toe muis coordinaten op te halen
-                spriteBatch.Draw(Cross, new Rectangle(Crosshair.GetCursX() - CrossSize / 2, Crosshair.GetCursY() - CrossSize / 2, CrossSize, CrossSize), Color.White);
+                spriteBatch.Draw(crossHair, new Rectangle(Crosshair.GetCursX() - crossSize / 2, Crosshair.GetCursY() - crossSize / 2, crossSize, crossSize), Color.White);
                // Bind de muis zijn x en y coordinaten aan het MIDDEN van de crosshair image (vandaar de gedeelt door 2) alles is gebaseerd op CrossSize dus het is met 1 int te wijzigen aan te passen
                 
                 spriteBatch.End();
                 base.Draw(gameTime);
+        }
+        void OnMainMenuClick(int item)
+        {
+           Menu menu = new Menu(Content, graphics, spriteBatch);
+            menu.LaunchItem(item);
         }
        
         
