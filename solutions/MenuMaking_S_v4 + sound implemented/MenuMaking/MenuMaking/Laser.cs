@@ -18,8 +18,8 @@ namespace MenuMaking
 
         private void initialize()
         {
-            laserShot = content.Load<SoundEffect>("");
-            laserReload = content.Load<SoundEffect>("");
+            laserShot = content.Load<SoundEffect>("aud_laser_shot");
+            laserReload = content.Load<SoundEffect>("aud_laser_load");
         }
 
         public void shoot()

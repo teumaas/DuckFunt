@@ -14,8 +14,8 @@ namespace MenuMaking
 
         public void initialize()
         {
-            rpgShot = content.Load<SoundEffect>("");
-            rpgLaunch = content.Load<SoundEffect>("");
+            rpgShot = content.Load<SoundEffect>("aud_rpg-1");
+            rpgLaunch = content.Load<SoundEffect>("aud_rpg-2");
         }
         public void shoot()
         {

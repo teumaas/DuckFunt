@@ -92,18 +92,20 @@
     <Compile Include="weapons.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="aud_ak47.wav" />
-    <Content Include="aud_amkp457_reload-l.wav" />
-    <Content Include="aud_amkp457_reload-s.wav" />
-    <Content Include="aud_m95.wav" />
-    <Content Include="aud_m95_rechamber.wav" />
-    <Content Include="aud_minigun.wav" />
-    <Content Include="aud_mp5.wav" />
-    <Content Include="aud_pistol.wav" />
-    <Content Include="aud_pistol_reload-l.wav" />
-    <Content Include="aud_pistol_reload-s.wav" />
-    <Content Include="aud_rpg-1.wav" />
-    <Content Include="aud_rpg-2.wav" />
+    <Content Include="audio\aud_ak47.wav" />
+    <Content Include="audio\aud_amkp457_reload-l.wav" />
+    <Content Include="audio\aud_amkp457_reload-s.wav" />
+    <Content Include="audio\aud_laser_load.wav" />
+    <Content Include="audio\aud_laser_shot.wav" />
+    <Content Include="audio\aud_m95.wav" />
+    <Content Include="audio\aud_m95_rechamber.wav" />
+    <Content Include="audio\aud_minigun.wav" />
+    <Content Include="audio\aud_mp5.wav" />
+    <Content Include="audio\aud_pistol.wav" />
+    <Content Include="audio\aud_pistol_reload-l.wav" />
+    <Content Include="audio\aud_pistol_reload-s.wav" />
+    <Content Include="audio\aud_rpg-1.wav" />
+    <Content Include="audio\aud_rpg-2.wav" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
