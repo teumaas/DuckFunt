@@ -1,0 +1,11 @@
+Original file properties
+
+Type		Wave (.wav)
+Duration	02:08:771
+Filesize	21.7 MB
+Samplerate	44100.0 Hz
+Bitdepth	16 bit
+Channels	Stereo
+
+source: 	https://www.freesound.org/people/cydon/sounds/168753/
+license:	Creative Commons 0

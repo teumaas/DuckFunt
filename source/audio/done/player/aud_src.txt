@@ -1,0 +1,115 @@
+aud_ak47.wav
+Original file properties
+
+Type		Wave (.wav)
+Duration	00:01:497
+Filesize	129.1 KB
+Samplerate	22050.0 Hz
+Bitdepth	16 bit
+Channels	Stereo
+
+source: 	https://freesound.org/people/pepv/sounds/205013/
+license:	Creative Commons 0
+
+
+aud_amkp457_reload-l.wav
+source:		Extracted by third party from Battlefield: Bad Company 2
+
+
+aud_amkp457_reload-s.wav
+source:		Extracted by third party from Battlefield: Bad Company 2
+
+
+aud_laser_load.wav
+######
+#TODO#
+######
+
+aud_laser_shot.wav
+######
+#TODO#
+######
+
+aud_m95.wav
+source:		Extracted by third party from Battlefield: Bad Company 2
+
+
+aud_m95_rechamber.wav
+source:		Extracted by third party from Battlefield: Bad Company 2
+
+
+aud_mp5.wav
+Original file properties
+
+Type		AIFF (.aiff)
+Duration	00:02:794
+Filesize	524.5 KB
+Samplerate	48000.0 Hz
+Bitdepth	16 bit
+Channels	Stereo
+
+source: 	https://freesound.org/people/Frankie01234/sounds/201667/
+license:	Creative Commons 0
+
+
+aud_pistol.wav
+Original file properties
+
+Type		Wave (.wav)
+Duration	00:00:460
+Filesize	39.8 KB
+Samplerate	44100.0 Hz
+Bitdepth	16 bit
+Channels	Mono
+
+source: 	https://freesound.org/people/LeMudCrab/sounds/163456/
+license:	Creative Commons 0
+
+
+aud_pistol_reload-l.wav
+source:		Extracted by third party from Battlefield: Bad Company 2
+
+
+aud_pistol_reload-s.wav
+source:		Extracted by third party from Battlefield: Bad Company 2
+
+
+aud_player-damage_0.wav
+source:		Extracted by third party from Battlefield: Bad Company 2
+
+
+aud_player-damage_1.wav
+source:		Extracted by third party from Battlefield: Bad Company 2
+
+
+aud_player-damage_2.wav
+source:		Extracted by third party from Battlefield: Bad Company 2
+
+
+aud_player-damage_3.wav
+source:		Extracted by third party from Battlefield: Bad Company 2
+
+
+aud_player-damage_4.wav
+source:		Extracted by third party from Battlefield: Bad Company 2
+
+
+aud_player-damage_5.wav
+source:		Extracted by third party from Battlefield: Bad Company 2
+
+
+aud_player-damage_6.wav
+source:		Extracted by third party from Battlefield: Bad Company 2
+
+
+aud_rpg-1.wav
+source:		Extracted by third party from Battlefield: Bad Company 2
+
+
+aud_rpg-2.wav
+source:		Extracted by third party from Battlefield: Bad Company 2
+
+
+aud_rpg_reload.wav
+source:		Extracted by third party from Battlefield: Bad Company 2
+

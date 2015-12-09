@@ -1,0 +1,79 @@
+aud_comm-bg_1.wav
+Original file properties
+
+Type		Wave (.wav)
+Duration	02:57:435
+Filesize	32.5 MB
+Samplerate	48000.0 Hz
+Bitdepth	16 bit
+Channels	Stereo
+
+source: 	https://www.freesound.org/people/cydon/sounds/189331/
+license:	Creative Commons 0
+
+
+aud_comm-bg_2.wav
+Original file properties
+
+Type		Wave (.wav)
+Duration	02:08:771
+Filesize	21.7 MB
+Samplerate	44100.0 Hz
+Bitdepth	16 bit
+Channels	Stereo
+
+source: 	https://www.freesound.org/people/cydon/sounds/168753/
+license:	Creative Commons 0
+
+
+aud_expl_1.wav
+Original file properties
+
+Type		Mp3 (.mp3)
+Duration	00:05:630
+Filesize	222.2 KB
+Bitrate		1500 kbps
+Channels	Stereo
+
+source: 	https://freesound.org/people/cydon/sounds/268557/
+license:	Creative Commons 0
+
+
+aud_expl_2.wav
+Original file properties
+
+Type		Mp3 (.mp3)
+Duration	00:04:334
+Filesize	171.6 KB
+Bitrate		1500 kbps
+Channels	Stereo
+
+source: 	https://freesound.org/people/cydon/sounds/268556/
+license:	Creative Commons 0
+
+
+aud_expl_3.wav
+Original file properties
+
+Type		Mp3 (.mp3)
+Duration	00:04:330
+Filesize	171.6 KB
+Bitrate		1500 kbps
+Channels	Stereo
+
+source: 	https://freesound.org/people/cydon/sounds/268555/
+license:	Creative Commons 0
+
+
+aud_expl_4.wav
+Original file properties
+
+Type		Mp3 (.mp3)
+Duration	00:05:678
+Filesize	224.1 KB
+Bitrate		1500 kbps
+Channels	Stereo
+
+source: 	https://freesound.org/people/cydon/sounds/268554/
+license:	Creative Commons 0
+
