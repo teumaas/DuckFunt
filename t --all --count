@@ -1,0 +1,181 @@
+Dimitri Nazari (25):
+      dod draft v0.1
+      contract draft v0.1
+      finished draft dod
+      added _logs folder
+      begin onderzoek geluidextensies
+      Created testenviroment
+      finished sound extension research
+      added mp5 sounds
+      added mp5 sound properties
+      materialen en middelenlijst
+      added pistol sound + properties
+      updated sounds
+      updated some audio files
+      added more sounds
+      minor updates
+      Revert "added more sounds"
+      Merge remote-tracking branch 'origin/master'
+      added audio dump
+      i did a bad
+      updated format audio urls
+      updated personal log
+      created document structure folders
+      audio progress
+      feedback for dod
+      audio + update contract
+
+Floris van Londen (18):
+      Contract_Unfinished
+      Contract_Final
+      Samenwerkingscontract ingescand
+      Mock ups toegevoegd
+      Tutorial inladen plaatjes toegevoegd :100:
+      UPDT
+      Main menu BG update :+1:
+      AIM crosshair traceren aan  de muis
+      Change Matrialen middelenlijst
+      update
+      PushChanges Base menu v2_Unfinal
+      BFBC2 Geluiden link + Update(unfinal)
+      Code base_v3 unfinal
+      Keven Record Incorperated group record label
+      Merge branch 'master' of https://github.com/SandyBalls/DuckFunt
+      Base_Code_final
+      PressStart2P font + permision to use
+      Base v4
+
+Henk "The Stiffmeister" Bertens (25):
+      Folder structure
+      file structure complete
+      added and finished github documentation
+      Conventie handleiding git
+      added intro test solution
+      nothing special
+      ben er helemaal klaar mee met die *** zooi XD
+      Materialen middelenlijst
+      typewriter effect added in test solution
+      added "enemies" folder
+      Added Hero design
+      Merge branch 'master' of https://github.com/SandyBalls/DuckFunt
+      added working intro
+      replaced images
+      working
+      final intro
+      Added fade in and fade out
+      added peer assessment
+      Update DOD
+      added paint.NET
+      update dod
+      updated DoD
+      update DoD t/m nr. 18
+      DoD final
+      Final check DoD
+
+Kevintjuh97 (13):
+      Bereikbaarheidslijst toegevoegd
+      Geluidsmogelijkheden in XNA.docx toegevoegd
+      Materialen en middelenlijst.docx
+      Geluidsmogelijkheden in XNA.docx bijgewerkt
+      Geluidsmogelijkheden in XNA.docx bijgewerkt
+      Bestandsbenamingen veranderd
+      Verouderde bestanden verwijderd
+      Conventies documenten toegepast
+      Onnodig bestand verwijderd
+      Map "src" benoemd naar "source"
+      Map "files" verwijderd
+      Conventies "compile_error.png" toegepast
+      Conventies toegepast op "Handleiding geluid en bronnen"
+
+Raoul48 (19):
+      build->files
+      Wijzigingen in contract
+      Mars
+      achtergronden voor het spel
+      menu background
+      backgrounds
+      design document
+      bijgewerkt design document
+      background
+      backgrounds
+      background
+      peer
+      materialen en middelenlijst
+      docs
+      update dev_doc en backgrounds
+      design_doc update
+      dd update en loading_bar background
+      loading bar
+      loading bar updated
+
+Tom Smits (34):
+      Initial commit
+      Project Files Added
+      Forgot something.
+      Testing folder structure
+      Create build
+      Delete build
+      Create build.r
+      Delete build.r
+      Delete Nieuw tekstdocument.txt
+      Create foo.txt
+      Create foo.txt
+      Create foo.txt
+      Create foo.txt
+      Create foo.txt
+      Rebuild
+      Update test
+      Final
+      Create README.md
+      Update README.md
+      Update README.md
+      Update README.md
+      Wrong folder
+      Added the WiimoteLib
+      XNA to Tools folder
+      Update README.md
+      Update README.md
+      PhysicsFrameworkXNA - Sietse
+      Materialen en Middelenlijst
+      Added Lib manual / Added WiiMoteLib v1.8
+      edit
+      Error
+      Created SpaceHunt
+      Map structure
+      WiiTest
+
+antho (5):
+      XNA installeren - FINISH
+      XNA schrem tonen - FINISH
+      XNA testen/installeren - FINISH
+      Ruimte hond design
+      Meterialen en middelenlijst
+
+santinobonora (26):
+      testcommit
+      storyline
+      update documentatie
+      documentatie
+      materialen en middelenlijst
+      speccy verwijderd
+      speccy protable als .RAR bestand toegevoegd
+      materialen en middelenlijst
+      materialen en middelenlijst
+      Handleiding geluid en bronnen.
+      duck funt story
+      replace source files to source folder
+      minor update audio folder
+      Handleiding geluid en bronnen
+      update handleiding geluid en bronnen + naamconventie
+      audio + legal agreement
+      EA LEGAL AGREEMENT
+      peer assessment
+      DEV DOCUMENTATION
+      user manual
+      dev documentation
+      Merge branch 'master' of https://github.com/SandyBalls/DuckFunt
+      dev_documentation
+      dev_documentation
+      geluid en bronnen + dev_documentation
+      laatste aanpassing dev_documentation
+
