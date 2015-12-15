@@ -1,0 +1,96 @@
+Main.cs
+
+	- gameState
+	- graphicsDeviceManager
+	- spriteBatch
+	- gameScreen
+	- menuScreen
+	- introScreen
+	
+	
+IntroScreen.cs
+
+	- //Moet door henk aangevuld worden.
+	
+	
+	
+MenuScreen.cs
+
+	- interactiveShape
+	- list<Button>
+	
+
+GameScreen.cs	
+	
+Cursor.cs
+
+	- vector
+	
+Shape.cs
+
+ShapeAnimated.cs : Shape.cs
+
+ShapeInteractive.cs : Shape.cs 
+
+Utility.cs - Static
+
+MessageBox.cs
+
+	- ShapeInteractive
+
+Weapon.cs
+
+	- weaponState
+	- damage
+	- ammo
+	- maxAmmo
+	- magazine
+	- maxMagazine
+	- fireRate
+	- reloadSound
+	- shootSound
+	- reloadAnimationShape
+	- reloadTime
+	- fireShape
+	- gunShape
+	
+Enemy.cs
+
+	- health
+	- velocity
+	- ufoInteractiveShape
+	- ufoDeadAnimatedShape
+	- alienAnimatedShape
+	
+EnemyArmed.cs : Enemy.cs
+
+	- damage
+	- gunShape
+	- fireRate
+	- fireTiming
+	- shootSound
+	
+Player.cs - Static
+
+	- score
+	- health
+	
+Level.cs
+
+	- background
+	- wave[5]
+	- currentWave
+
+Wave.cs 
+
+	- Ememy[15]
+	
+WiimoteHandler.cs
+
+	- Wiimote
+	- Position
+
+
+
+
+
