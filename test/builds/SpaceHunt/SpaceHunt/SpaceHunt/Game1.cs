@@ -18,6 +18,7 @@ namespace SpaceHunt
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Texture2D eImg, eBg;
 
         public Game1()
         {
@@ -33,8 +34,9 @@ namespace SpaceHunt
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-
+            eImg = Content.Load<Texture2D>("img_hostile_common_1");
+            eBg = Content.Load<Texture2D>("img_hostile_common_1-bg");
+            
             base.Initialize();
         }
 
@@ -46,7 +48,7 @@ namespace SpaceHunt
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            
             // TODO: use this.Content to load your game content here
         }
 
@@ -81,8 +83,11 @@ namespace SpaceHunt
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-
+            GraphicsDevice.Clear(Color.White);
+            spriteBatch.Begin();
+            spriteBatch.Draw(eBg, new Rectangle(0, 0, (eBg.Width / 10), (eBg.Height / 10)), Color.White);
+            spriteBatch.Draw(eImg, new Rectangle(0, 0, (eImg.Width / 10), (eImg.Height / 10)), Color.White);
+            spriteBatch.End();
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);

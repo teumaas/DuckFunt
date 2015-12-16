@@ -1,0 +1,11 @@
+ma 14-12
+tl: henk tom anthony
+afw: raoul
+
+di 15-12
+tl: henk
+afw: 
+
+wo 16-12
+tl: dimitri raoul henk
+afw: henk
