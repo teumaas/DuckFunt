@@ -17,8 +17,7 @@ namespace SpaceHunt
     public class Game1 : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
-        Texture2D eImg, eBg;
+        SpriteBatch sb;
 
         public Game1()
         {
@@ -34,8 +33,6 @@ namespace SpaceHunt
         /// </summary>
         protected override void Initialize()
         {
-            eImg = Content.Load<Texture2D>("img_hostile_common_1");
-            eBg = Content.Load<Texture2D>("img_hostile_common_1-bg");
             
             base.Initialize();
         }
@@ -47,7 +44,7 @@ namespace SpaceHunt
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
-            spriteBatch = new SpriteBatch(GraphicsDevice);
+            sb = new SpriteBatch(GraphicsDevice);
             
             // TODO: use this.Content to load your game content here
         }
@@ -84,10 +81,9 @@ namespace SpaceHunt
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.White);
-            spriteBatch.Begin();
-            spriteBatch.Draw(eBg, new Rectangle(0, 0, (eBg.Width / 10), (eBg.Height / 10)), Color.White);
-            spriteBatch.Draw(eImg, new Rectangle(0, 0, (eImg.Width / 10), (eImg.Height / 10)), Color.White);
-            spriteBatch.End();
+            sb.Begin();
+            
+            sb.End();
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
