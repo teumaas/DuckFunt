@@ -27,10 +27,10 @@ namespace MenuMaking
         Texture2D crossHair;
         Texture2D backGround;
         int lettersize;
-        bool boolMenuEnabled = true;
+        bool boolMenuEnabled = false;
         bool enableLeaderboard = false;
 
-        public static bool ScoreEnabled = false;
+        public static bool ScoreEnabled = true;
         int startLocY;
         string[] menuItems = { "Start game", "Local Leadeboard", "Settings", "Itens" };
         public Game1()
@@ -153,18 +153,19 @@ namespace MenuMaking
             }
             
             
-                spriteBatch.Begin();
-                CursorUpdater Crosshair = new CursorUpdater(); // Staat het programma toe muis coordinaten op te halen
-                spriteBatch.Draw(crossHair, new Rectangle(Crosshair.GetCursX() - crossSize / 2, Crosshair.GetCursY() - crossSize / 2, crossSize, crossSize), Color.White);
-               // Bind de muis zijn x en y coordinaten aan het MIDDEN van de crosshair image (vandaar de gedeelt door 2) alles is gebaseerd op CrossSize dus het is met 1 int te wijzigen aan te passen
-            
-                
-                spriteBatch.End();
+               
                 if (ScoreEnabled)
                 {
                     TableManager scoretable = new TableManager(graphics, Content, spriteBatch);
-                    scoretable.DrawTables(new Vector2(40, 40));
+                    scoretable.DrawTables(new Vector2(90, 40));
                 }
+                spriteBatch.Begin();
+                CursorUpdater Crosshair = new CursorUpdater(); // Staat het programma toe muis coordinaten op te halen
+                spriteBatch.Draw(crossHair, new Rectangle(Crosshair.GetCursX() - crossSize / 2, Crosshair.GetCursY() - crossSize / 2, crossSize, crossSize), Color.White);
+                // Bind de muis zijn x en y coordinaten aan het MIDDEN van de crosshair image (vandaar de gedeelt door 2) alles is gebaseerd op CrossSize dus het is met 1 int te wijzigen aan te passen
+
+
+                spriteBatch.End();
                 base.Draw(gameTime);
         }
         void OnMainMenuClick(int item)

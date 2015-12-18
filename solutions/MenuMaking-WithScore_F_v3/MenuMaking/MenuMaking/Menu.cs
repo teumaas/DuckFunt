@@ -14,7 +14,8 @@ namespace MenuMaking
 {
     class Menu //: Microsoft.Xna.Framework.DrawableGameComponent
     {
-        
+        public Color textColor;
+        public Color colorBG;
         private SpriteFont font;
         int lettersize;
         SpriteBatch sprites;
@@ -51,7 +52,17 @@ namespace MenuMaking
         {
          //   graphics = new GraphicsDeviceManager(this);
             graphics.IsFullScreen = fullscreen;
-           
+            textColor = new Color(); //foreground
+            textColor.R = 65;
+            textColor.G = 103;
+            textColor.B = 136;
+            textColor.A = 200;
+
+            colorBG = new Color();
+            colorBG.R = 0;
+            colorBG.G = 244;
+            colorBG.B = 200;
+            colorBG.A = 180; //transpa
           // graphics.ApplyChanges();   
             sprites = new SpriteBatch(graphics.GraphicsDevice);
             font = content.Load<SpriteFont>("MenuFont");
@@ -86,21 +97,21 @@ namespace MenuMaking
                 for (int i = 0; i < menuItems.Length; i++)
                 {
                     string TempMenuItem = menuItems[i];
-                    Color temp = new Color();
-                    temp.R = 0;
-                    temp.G = 244;
-                    temp.B = 200;
-                    temp.A = 180; //transpa
+                    //Color temp = new Color();
+                    //temp.R = 0;
+                    //temp.G = 244;
+                    //temp.B = 200;
+                    //temp.A = 180; //transpa
                     Vector2 size = font.MeasureString(TempMenuItem);
                     CurY = startLocY + ((int)size.Y * i);
-                    BuildBG(temp, ((middleX - ((int)size.X / 2)) - 2), CurY -5, (int)size.X + 3, (int)size.Y + 3); // Pakt de tekstgrootte + een paar pixels verschil voor de looks
+                    BuildBG(colorBG, ((middleX - ((int)size.X / 2)) - 2), CurY -5, (int)size.X + 3, (int)size.Y + 3); // Pakt de tekstgrootte + een paar pixels verschil voor de looks
                     sprites.Begin();
-                    Color TextColor = new Color();
-                    TextColor.R = 65;
-                    TextColor.G = 103;
-                    TextColor.B = 136;
-                    TextColor.A = 200;
-                    sprites.DrawString(font, TempMenuItem, new Vector2(middleX - Convert.ToInt32(size.X / 2), CurY), TextColor);
+                    //Color TextColor = new Color();
+                    //TextColor.R = 65;
+                    //TextColor.G = 103;
+                    //TextColor.B = 136;
+                    //TextColor.A = 200;
+                    sprites.DrawString(font, TempMenuItem, new Vector2(middleX - Convert.ToInt32(size.X / 2), CurY), textColor);
                     startLocY += 10;
                     lettersize = (int)size.X;
                     sprites.End();
