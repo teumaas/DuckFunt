@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using SpaceHunt.Classes;
 
 namespace SpaceHunt
 {
@@ -18,6 +19,10 @@ namespace SpaceHunt
     {
         GraphicsDeviceManager graphics;
         SpriteBatch sb;
+        Enemy enemy;
+        ShapeInteractive ufoShapeInteractive;
+        ShapeAnimated ufoDeadShapeAnimated, alienShapeAnimated;
+        Texture2D tex2d;
 
         public Game1()
         {
@@ -33,7 +38,11 @@ namespace SpaceHunt
         /// </summary>
         protected override void Initialize()
         {
-            
+            tex2d = Content.Load<Texture2D>("img_hostile_common_1");
+            ufoShapeInteractive = new ShapeInteractive(tex2d, new Rectangle(50, 50, tex2d.Width, tex2d.Height));
+            alienShapeAnimated = new ShapeAnimated(tex2d, ufoShapeInteractive.rectangle, ufoShapeInteractive.rectangle, 100, 100, null);
+            ufoDeadShapeAnimated = new ShapeAnimated(tex2d, ufoShapeInteractive.rectangle, ufoShapeInteractive.rectangle, 100, 100, null
+            enemy = new Enemy(100, 0.1f, ufoShapeInteractive, ufoDeadShapeAnimated, alienShapeAnimated);
             base.Initialize();
         }
 

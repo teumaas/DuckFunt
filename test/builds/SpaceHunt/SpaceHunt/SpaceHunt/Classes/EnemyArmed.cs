@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SpaceHunt
+namespace SpaceHunt.Classes
 {
-    class EnemyArmed : Enemy
+    public class EnemyArmed : Enemy
     {
         int damage, gunShape, fireRate, fireTiming;
         SoundEffect shootSound;

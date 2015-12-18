@@ -30,26 +30,417 @@
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.VideoImporters, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="img_hostile_common_1-bg.png">
+    <Compile Include="img\bg\earth\earth_background_intro_8bit.png">
+      <Name>earth_background_intro_8bit</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\earth\earth_background_level_8bit.png">
+      <Name>earth_background_level_8bit</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\earth\earth_background_level_8bit_final.png">
+      <Name>earth_background_level_8bit_final</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\earth\earth_background_menu_8bit.png">
+      <Name>earth_background_menu_8bit</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\Eris\Eris.png">
+      <Name>Eris</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\Eris\Eris2.png">
+      <Name>Eris2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\Eris\eris_background.png">
+      <Name>eris_background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\Eris\eris_background2.png">
+      <Name>eris_background2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\Eris\eris_stars.png">
+      <Name>eris_stars</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\Eris\test.jpg">
+      <Name>test</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\Eris\test2.jpg">
+      <Name>test2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\mars\mars_background_8bit.png">
+      <Name>mars_background_8bit</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\Neptunus\neptunus_background.png">
+      <Name>neptunus_background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\Neptunus\neptunus_background2test.png">
+      <Name>neptunus_background2test</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\orginal\20802118724_6a6c96dab9_m.jpg">
+      <Name>20802118724_6a6c96dab9_m</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\orginal\20802118724_6f84936ce3_o%281%29.jpg">
+      <Name>20802118724_6f84936ce3_o%281%29</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\orginal\21236949258_0657a69a14_m.jpg">
+      <Name>21236949258_0657a69a14_m</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\orginal\261111main_10_TwoSpiralGalaxies_full.jpg">
+      <Name>261111main_10_TwoSpiralGalaxies_full</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\orginal\261279main_23_AntennaeGalaxies_full.jpg">
+      <Name>261279main_23_AntennaeGalaxies_full</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\orginal\8BPimage2015112014952921794.png">
+      <Name>8BPimage2015112014952921794</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\orginal\8BPimage2015112015326761981.png">
+      <Name>8BPimage2015112015326761981</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\orginal\boy-walking-red-dirt-hills-720x480.jpg">
+      <Name>boy-walking-red-dirt-hills-720x480</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\orginal\earth_test2.png">
+      <Name>earth_test2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\orginal\Fjords-in-Canada-12171304FAA23D02.jpg">
+      <Name>Fjords-in-Canada-12171304FAA23D02</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\orginal\joshua-tree-desert-clouds-720x480.jpg">
+      <Name>joshua-tree-desert-clouds-720x480</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\orginal\joshua-tree-desert-clouds-720x480test.jpg">
+      <Name>joshua-tree-desert-clouds-720x480test</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\orginal\mountain-lake-clouds-sky-720x480.jpg">
+      <Name>mountain-lake-clouds-sky-720x480</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\orginal\mountain-lake-clouds-sky-720x480test.jpg">
+      <Name>mountain-lake-clouds-sky-720x480test</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\orginal\palm-trees-tropical-sand-beach-clouds-720x405.jpg">
+      <Name>palm-trees-tropical-sand-beach-clouds-720x405</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\orginal\public-domain-images-free-stock-photo-ice-north-pole-g-1000x653.jpg">
+      <Name>public-domain-images-free-stock-photo-ice-north-pole-g-1000x653</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\orginal\road-forest-mountains-720x480.jpg">
+      <Name>road-forest-mountains-720x480</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\orginal\stars.png">
+      <Name>stars</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\orginal\straight-road-mountains-720x480.jpg">
+      <Name>straight-road-mountains-720x480</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\orginal\Swirling-Lights-Aurora-Borealis--0120143815FFD1D7.jpg">
+      <Name>Swirling-Lights-Aurora-Borealis--0120143815FFD1D7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\orginal\venus_background_test.png">
+      <Name>venus_background_test</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\bg\Venus\venus_background.png">
+      <Name>venus_background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\hostile\img_hostile_boss_1-bg.png">
+      <Name>img_hostile_boss_1-bg</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\hostile\img_hostile_boss_1.png">
+      <Name>img_hostile_boss_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\hostile\img_hostile_boss_2.png">
+      <Name>img_hostile_boss_2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\hostile\img_hostile_boss_3.png">
+      <Name>img_hostile_boss_3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\hostile\img_hostile_common_1-bg.png">
       <Name>img_hostile_common_1-bg</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="img_hostile_common_1.png">
+    <Compile Include="img\hostile\img_hostile_common_1.png">
       <Name>img_hostile_common_1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="img_hostile_common_2-bg.png">
+    <Compile Include="img\hostile\img_hostile_common_1_resize.png">
+      <Name>img_hostile_common_1_resize</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\hostile\img_hostile_common_2-bg.png">
       <Name>img_hostile_common_2-bg</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="img_hostile_common_2.png">
+    <Compile Include="img\hostile\img_hostile_common_2.png">
       <Name>img_hostile_common_2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+    <Compile Include="img\hostile\old\img_hostile_boss_1.png">
+      <Name>img_hostile_boss_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\hostile\old\img_hostile_common_1.png">
+      <Name>img_hostile_common_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\hostile\old\img_hostile_common_2.png">
+      <Name>img_hostile_common_2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\planets\earth\earth_original.png">
+      <Name>earth_original</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\planets\earth\earth_planet_8bit_final.png">
+      <Name>earth_planet_8bit_final</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\planets\earth\earth_planet_8bit_final_resize.png">
+      <Name>earth_planet_8bit_final_resize</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\planets\eris\eris_planet_8bit_final.png">
+      <Name>eris_planet_8bit_final</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\planets\eris\eris_test.png">
+      <Name>eris_test</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\planets\eris\eris_test2.jpg">
+      <Name>eris_test2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\planets\mars\mars-884709_960_720.jpg">
+      <Name>mars-884709_960_720</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\planets\mars\mars_planet_8bit_final.png">
+      <Name>mars_planet_8bit_final</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\planets\mars\mars_planet_8bit_final_resize.png">
+      <Name>mars_planet_8bit_final_resize</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\planets\mars\mars_test.jpg">
+      <Name>mars_test</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\planets\mercury\mercury_planet_8bit_final.png">
+      <Name>mercury_planet_8bit_final</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\planets\mercury\mercury_test.jpg">
+      <Name>mercury_test</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\planets\mercury\mercury_test.png">
+      <Name>mercury_test</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\planets\neptunus\neptunus_planet_8bit_final.jpg">
+      <Name>neptunus_planet_8bit_final</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\planets\neptunus\neptunus_test.png">
+      <Name>neptunus_test</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\planets\neptunus\neptunus_test2.jpg">
+      <Name>neptunus_test2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\planets\solar_system\Scale_of_the_Solar_System.png">
+      <Name>Scale_of_the_Solar_System</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\planets\solar_system\solar_system_original.jpg">
+      <Name>solar_system_original</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\planets\solar_system\solar_system_original2.jpg">
+      <Name>solar_system_original2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\planets\venus\venus_planet_8bit_final.png">
+      <Name>venus_planet_8bit_final</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\planets\venus\venus_test2.jpg">
+      <Name>venus_test2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\planets\venus\venus_test2.png">
+      <Name>venus_test2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\player\hero design.png">
+      <Name>hero design</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\player\Naamloos.png">
+      <Name>Naamloos</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\player\sprites.png">
+      <Name>sprites</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\player\sprites2.png">
+      <Name>sprites2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\player\sprite_1.png">
+      <Name>sprite_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\player\sprite_2.png">
+      <Name>sprite_2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\player\sprite_3.png">
+      <Name>sprite_3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="img\hostile\projFiles\xcf_img_fire_0.xcf">
+      <Name>xcf_img_fire_0</Name>
+    </Compile>
+    <Compile Include="img\hostile\projFiles\xcf_img_hostile_boss_1-bg.xcf">
+      <Name>xcf_img_hostile_boss_1-bg</Name>
+    </Compile>
+    <Compile Include="img\hostile\projFiles\xcf_img_hostile_boss_1.xcf">
+      <Name>xcf_img_hostile_boss_1</Name>
+    </Compile>
+    <Compile Include="img\hostile\projFiles\xcf_img_hostile_common_1-bg.xcf">
+      <Name>xcf_img_hostile_common_1-bg</Name>
+    </Compile>
+    <Compile Include="img\hostile\projFiles\xcf_img_hostile_common_1.xcf">
+      <Name>xcf_img_hostile_common_1</Name>
+    </Compile>
+    <Compile Include="img\hostile\projFiles\xcf_img_hostile_common_2-bg.xcf">
+      <Name>xcf_img_hostile_common_2-bg</Name>
+    </Compile>
+    <Compile Include="img\hostile\projFiles\xcf_img_hostile_common_2.xcf">
+      <Name>xcf_img_hostile_common_2</Name>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="aud\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 

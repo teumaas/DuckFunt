@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SpaceHunt
+namespace SpaceHunt.Classes
 {
-    class Actor
+    public class Actor
     {
         public Actor()
         {
