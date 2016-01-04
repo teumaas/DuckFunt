@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 ﻿
+=======
+>>>>>>> parent of 1e35a57... Revert "nothing special"
 ﻿using System;
 using WiimoteLib;
 using System.Collections.Generic;
@@ -41,6 +44,10 @@ namespace XNA_Learning
             ufoDir = new Vector2(0f, 0f);
             ufoRec = new Rectangle(0, 0, 100, 31);
             destRec = new Rectangle(0 , 0, 100, 31);
+<<<<<<< HEAD
+=======
+            sprite = new Sprite(crossLocation, imgAvatar, screenWidth);
+>>>>>>> parent of 1e35a57... Revert "nothing special"
             rndX = new Random();
             rndY = new Random();
             shot = false;
@@ -103,4 +110,8 @@ namespace XNA_Learning
             }
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> parent of 1e35a57... Revert "nothing special"

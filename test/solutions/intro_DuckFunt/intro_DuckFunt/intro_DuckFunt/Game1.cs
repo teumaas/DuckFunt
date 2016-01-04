@@ -40,19 +40,22 @@ namespace intro_DuckFunt
         SoundEffect snd;
         Vector2 pos;
         SoundEffectInstance soundEffectInstance;
+        Fade fade;
+        Color color;
+
         double typedTextLength;
         int delayInMilliseconds;
         bool isDoneDrawing;
         float elapsed;
         float delay = 300f;
+        int i;
         int frames;
         int oneFrame;
         int recWidth;
         int recHeight;
         int frameHeight;
-        int i;
-        byte R, G, B;
-        Color color;
+
+
 
         public Game1()
         {
@@ -62,11 +65,6 @@ namespace intro_DuckFunt
 
         protected override void Initialize()
         {
-            R = 0;
-            G = 0;
-            B = 0;
-            i = 0;
-
             frames = 1;
             frameHeight = 50;
             heroSheet = Content.Load<Texture2D>("sprites");
@@ -91,6 +89,7 @@ namespace intro_DuckFunt
             text = File.ReadAllText("story.txt");
             snd = Content.Load<SoundEffect>("click2");
             pic = Content.Load<Texture2D>("earth");
+            fade = new Fade(pic, pos, back);
             soundEffectInstance = snd.CreateInstance();
             parsedText = parseText(text);
             delayInMilliseconds = 25;
@@ -110,26 +109,7 @@ namespace intro_DuckFunt
                 this.Exit();
             }
 
-            elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-
-
-            
-                if (i <= 154)
-                {
-                    i++;
-
-                    R += 1;
-                    G += 1;
-                    B += 1;
-
-                    color.R = R;
-                    color.G = G;
-                    color.B = B;
-
-                    DrawBack();
-                }
-            
-
+            fade.DrawFade(gameTime, spriteBatch, elapsed);
 
             if (pos.Y >= -50 && typedTextLength >= 200 && i >= 154)
             {
@@ -192,18 +172,7 @@ namespace intro_DuckFunt
             heroRec = new Rectangle(GraphicsDevice.Viewport.Width / 2, 300, recWidth, recHeight);
             destRec = new Rectangle(oneFrame * frames, 0, oneFrame, frameHeight);
 
-            if (pos.Y <= -50 && R > 0)
-            {
-                R -= 1;
-                G -= 1;
-                B -= 1;
-
-                color.R = R;
-                color.G = G;
-                color.B = B;
-
-                DrawBack();
-            }
+            fade.DeleteDraw(spriteBatch);
 
             base.Update(gameTime);
         }
@@ -223,12 +192,7 @@ namespace intro_DuckFunt
             base.Draw(gameTime);
         }
 
-        private void DrawBack()
-        {
-            spriteBatch.Begin();
-            spriteBatch.Draw(pic, back, color);
-            spriteBatch.End();
-        }
+
 
 #if PARSE
         private String parseText(String text)
