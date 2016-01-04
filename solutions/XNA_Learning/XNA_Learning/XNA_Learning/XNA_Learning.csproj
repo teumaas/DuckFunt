@@ -70,9 +70,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Net" />
-    <Reference Include="WiimoteLib, Version=1.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Desktop\WiimoteLib.dll</HintPath>
+    <Reference Include="WiimoteLib">
+      <HintPath>..\..\..\..\..\tools\WiimoteLib_1.8\WiimoteLib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -80,6 +79,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Sprite.cs" />
+    <Compile Include="Ufo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
