@@ -24,25 +24,34 @@ namespace XNA_Learning
         private SpriteBatch spriteBatch;
         private SpriteFont font;
         private SoundEffect sound;
+        private Texture2D ufoImg;
 
         private Sprite sprite;
+        private Ufo ufo;
         private Sprite enemySprite;
         private Wiimote wm;
+        private AccelState accelS;
+        private Point3F p3;
 
         private float wY;
         private float wX;
+        private float screanWidth;
         
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
 
             graphics.PreferredBackBufferHeight = 700;
-            graphics.PreferredBackBufferWidth = 900;
+            graphics.PreferredBackBufferWidth = 1024;
+
+            screanWidth = graphics.PreferredBackBufferWidth;
 
             graphics.IsFullScreen = false;
 
             Content.RootDirectory = "Content";
 
+            p3 = new Point3F();
+            accelS = new AccelState();
             wm = new Wiimote();
 
             wm.Connect();
@@ -72,8 +81,10 @@ namespace XNA_Learning
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             // TODO: use this.Content to load your game content here
+            ufoImg = Content.Load<Texture2D>("img_hostile_common_1_resize");
             sprite = new Sprite(new Vector2(0, 0),
             Content.Load<Texture2D>("Crosshair"));
+            ufo = new Ufo(ufoImg, Content.Load<Texture2D>("Crosshair"), wm, screanWidth);
             font = Content.Load<SpriteFont>("SpriteFont1");
             sound = Content.Load<SoundEffect>("aud_pistol");
 
@@ -102,6 +113,8 @@ namespace XNA_Learning
             
             sprite.velocity = new Vector2(0, 0);
 
+            
+
             sprite.location.X = wm.WiimoteState.IRState.IRSensors[0].RawPosition.X;
             sprite.location.Y = wm.WiimoteState.IRState.IRSensors[0].RawPosition.Y;
 
@@ -120,6 +133,8 @@ namespace XNA_Learning
             
 
             sprite.Update(elapsed);
+            ufo.Update(screanWidth, graphics.PreferredBackBufferHeight, wX, wY);
+            ufo.Shoot(spriteBatch);
             base.Update(gameTime);
 
             
@@ -136,6 +151,7 @@ namespace XNA_Learning
             // TODO: Add your drawing code here
             spriteBatch.Begin();
             sprite.Draw(spriteBatch);
+            ufo.Draw(spriteBatch);
             spriteBatch.DrawString(font, wY.ToString(), new Vector2(10, 10), Color.White);
             spriteBatch.DrawString(font, wX.ToString(), new Vector2(10, 30), Color.White);
             spriteBatch.End();
