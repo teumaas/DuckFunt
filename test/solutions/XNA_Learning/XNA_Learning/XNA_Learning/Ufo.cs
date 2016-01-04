@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-﻿
-=======
->>>>>>> parent of 1e35a57... Revert "nothing special"
 ﻿using System;
 using WiimoteLib;
 using System.Collections.Generic;
@@ -28,7 +24,7 @@ namespace XNA_Learning
         public bool shot;
         public int score;
         public float screenWidth;
-        
+
 
         public Ufo(Texture2D ufoImg, Texture2D imgAvatar, Wiimote wm, float screenWidth)
         {
@@ -43,22 +39,19 @@ namespace XNA_Learning
             ufoVelocity = new Vector2(3f, 1f);
             ufoDir = new Vector2(0f, 0f);
             ufoRec = new Rectangle(0, 0, 100, 31);
-            destRec = new Rectangle(0 , 0, 100, 31);
-<<<<<<< HEAD
-=======
+            destRec = new Rectangle(0, 0, 100, 31);
             sprite = new Sprite(crossLocation, imgAvatar, screenWidth);
->>>>>>> parent of 1e35a57... Revert "nothing special"
             rndX = new Random();
             rndY = new Random();
             shot = false;
         }
 
-        
-        public void Update(float screenWidth, float screenHeight , float wX, float wY)
+
+        public void Update(float screenWidth, float screenHeight, float wX, float wY)
         {
             ufoDir += ufoVelocity;
 
-            crossLocation.X = wX;   
+            crossLocation.X = wX;
             crossLocation.Y = wY;
             crossLocation = new Vector2(crossLocation.X + imgAvatar.Width / 2, crossLocation.Y + imgAvatar.Height / 2);
 
@@ -82,7 +75,7 @@ namespace XNA_Learning
                 ufoVelocity.X *= -1;
             }
         }
-        
+
         public bool Shoot(SpriteBatch sb)
         {
             if (wm.WiimoteState.ButtonState.A)
@@ -110,8 +103,4 @@ namespace XNA_Learning
             }
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> parent of 1e35a57... Revert "nothing special"

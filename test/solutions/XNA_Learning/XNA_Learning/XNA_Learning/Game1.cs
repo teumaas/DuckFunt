@@ -24,25 +24,22 @@ namespace XNA_Learning
         private SpriteBatch spriteBatch;
         private SpriteFont font;
         private SoundEffect sound;
-<<<<<<< HEAD
+
         private Texture2D ufoImg;
-=======
+
         private Vector2 ufoDir;
         private WiimoteCollection wMC;
->>>>>>> parent of 1e35a57... Revert "nothing special"
+
 
         private Sprite sprite;
-        private Ufo ufo;
         private Sprite enemySprite;
         private Wiimote wm;
-<<<<<<< HEAD
+
         private AccelState accelS;
         private Point3F p3;
 
-        private float wY;
-        private float wX;
         private float screanWidth;
-=======
+
         private Ufo ufo;
         public SpriteEffects flip; 
         
@@ -52,7 +49,6 @@ namespace XNA_Learning
         private float screenHeight;
 
         private int y;
->>>>>>> parent of 1e35a57... Revert "nothing special"
         
         public Game1()
         {
@@ -106,13 +102,12 @@ namespace XNA_Learning
             // TODO: use this.Content to load your game content here
             ufoImg = Content.Load<Texture2D>("img_hostile_common_1_resize");
             sprite = new Sprite(new Vector2(0, 0),
-<<<<<<< HEAD
-            Content.Load<Texture2D>("Crosshair"));
+            Content.Load<Texture2D>("Crosshair"), screanWidth);
             ufo = new Ufo(ufoImg, Content.Load<Texture2D>("Crosshair"), wm, screanWidth);
-=======
-            Content.Load<Texture2D>("Crosshair"), screenWidth);
+
+            Content.Load<Texture2D>("Crosshair");
             ufo = new Ufo(Content.Load<Texture2D>("Ufo_Resized"), Content.Load<Texture2D>("Crosshair"), wm, screenWidth);
->>>>>>> parent of 1e35a57... Revert "nothing special"
+
             font = Content.Load<SpriteFont>("SpriteFont1");
             sound = Content.Load<SoundEffect>("aud_pistol");
             screenWidth = Window.ClientBounds.Width;
@@ -151,15 +146,13 @@ namespace XNA_Learning
 
             float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-<<<<<<< HEAD
-            
+            wm.WiimoteState.IRState.IRSensors[0].RawPosition.X = (int)screanWidth - wm.WiimoteState.IRState.IRSensors[0].RawPosition.X;
 
             sprite.location.X = wm.WiimoteState.IRState.IRSensors[0].RawPosition.X;
             sprite.location.Y = wm.WiimoteState.IRState.IRSensors[0].RawPosition.Y;
-=======
+
             ufo.Shoot(spriteBatch);
             sprite.velocity = new Vector2(0, 0);
->>>>>>> parent of 1e35a57... Revert "nothing special"
 
             sprite.location.X = wm.WiimoteState.IRState.IRSensors[0].RawPosition.X; //wm.WiimoteState.IRState.IRSensors[0].Position.X; 
             sprite.location.Y = wm.WiimoteState.IRState.IRSensors[2].RawPosition.Y;
@@ -179,12 +172,12 @@ namespace XNA_Learning
             
 
             sprite.Update(elapsed);
-<<<<<<< HEAD
+
             ufo.Update(screanWidth, graphics.PreferredBackBufferHeight, wX, wY);
             ufo.Shoot(spriteBatch);
-=======
+
             ufo.Update(screenWidth, screenHeight, wX, wY);
->>>>>>> parent of 1e35a57... Revert "nothing special"
+
             base.Update(gameTime);
 
             
@@ -200,14 +193,11 @@ namespace XNA_Learning
             
             // TODO: Add your drawing code here
             spriteBatch.Begin();
-<<<<<<< HEAD
-            sprite.Draw(spriteBatch);
+            sprite.Draw(spriteBatch, wX, wY);
             ufo.Draw(spriteBatch);
-=======
             
             ufo.Draw(spriteBatch);
             sprite.Draw(spriteBatch, wX, wY);
->>>>>>> parent of 1e35a57... Revert "nothing special"
             spriteBatch.DrawString(font, wY.ToString(), new Vector2(10, 10), Color.White);
             spriteBatch.DrawString(font, wX.ToString(), new Vector2(10, 30), Color.White);
             spriteBatch.DrawString(font, ufo.score.ToString(), new Vector2(870, 10), Color.White);

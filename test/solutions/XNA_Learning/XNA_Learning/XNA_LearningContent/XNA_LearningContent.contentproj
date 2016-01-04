@@ -52,10 +52,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="img_hostile_common_1_resize.png">
       <Name>img_hostile_common_1_resize</Name>
-=======
+    </Compile>
     <Compile Include="Ufo.png">
       <Name>Ufo</Name>
       <Importer>TextureImporter</Importer>
@@ -72,7 +71,6 @@
   <ItemGroup>
     <Compile Include="download.png">
       <Name>download</Name>
->>>>>>> parent of 1e35a57... Revert "nothing special"
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
