@@ -25,6 +25,7 @@ namespace XNA_Learning
 
         public void Update(float elapsed)
         {
+
             location += velocity * elapsed;
 
             bounds.X = (int)location.X;
