@@ -41,15 +41,15 @@ namespace XNA_Learning
         private float screanWidth;
 
         private Ufo ufo;
-        public SpriteEffects flip;
-
+        public SpriteEffects flip; 
+        
         private float wY;
         private float wX;
         private float screenWidth;
         private float screenHeight;
 
         private int y;
-
+        
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -72,7 +72,7 @@ namespace XNA_Learning
             wm.SetLEDs(true, false, false, false);
             //wm.WiimoteState.
 
-
+            
 
         }
 
@@ -87,7 +87,7 @@ namespace XNA_Learning
             wMC = new WiimoteCollection();
             flip = SpriteEffects.FlipHorizontally;
 
-
+            
             base.Initialize();
         }
 
@@ -157,7 +157,7 @@ namespace XNA_Learning
 
             sprite.location.X = wm.WiimoteState.IRState.IRSensors[0].RawPosition.X; //wm.WiimoteState.IRState.IRSensors[0].Position.X; 
             sprite.location.Y = wm.WiimoteState.IRState.IRSensors[2].RawPosition.Y;
-
+        
             wX = wm.WiimoteState.IRState.IRSensors[0].RawPosition.X;
             wY = wm.WiimoteState.IRState.IRSensors[0].RawPosition.Y;
 
@@ -165,12 +165,12 @@ namespace XNA_Learning
             {
                 Exit();
             }
-
+          
             if (wm.WiimoteState.ButtonState.B)
             {
-
+                
             }
-
+            
 
             sprite.Update(elapsed);
 
@@ -181,7 +181,7 @@ namespace XNA_Learning
 
             base.Update(gameTime);
 
-
+            
         }
 
         /// <summary>
@@ -191,12 +191,12 @@ namespace XNA_Learning
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Gray);
-
+            
             // TODO: Add your drawing code here
             spriteBatch.Begin();
             sprite.Draw(spriteBatch, wX, wY);
             ufo.Draw(spriteBatch);
-
+            
             ufo.Draw(spriteBatch);
             sprite.Draw(spriteBatch, wX, wY);
             spriteBatch.DrawString(font, wY.ToString(), new Vector2(10, 10), Color.White);

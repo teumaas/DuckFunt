@@ -60,7 +60,7 @@ namespace XNA_Learning
         {
             //wX = 800 - wX;
             sb.Draw(imgAvatar, new Vector2(wX, wY), col);
-            sb.Draw(imgAvatar, new Rectangle(0,0,10,10), new Rectangle(), col, 0f, new Vector2(wX, wY), SpriteEffects.FlipHorizontally, 0f);
+            sb.Draw(imgAvatar, new Rectangle(0, 0, 10, 10), new Rectangle(), col, 0f, new Vector2(wX, wY), SpriteEffects.FlipHorizontally, 0f);
         }
     }
 }

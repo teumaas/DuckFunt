@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XNA_Learning", "XNA_Learning\XNA_Learning\XNA_Learning.csproj", "{8731423A-8ED4-4C09-83FF-17CEAC5C6A09}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "XNA_LearningContent", "XNA_Learning\XNA_LearningContent\XNA_LearningContent.contentproj", "{3A8D1365-D491-44B6-9760-937905F5ADEF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8731423A-8ED4-4C09-83FF-17CEAC5C6A09}.Debug|x86.ActiveCfg = Debug|x86
+		{8731423A-8ED4-4C09-83FF-17CEAC5C6A09}.Debug|x86.Build.0 = Debug|x86
+		{8731423A-8ED4-4C09-83FF-17CEAC5C6A09}.Release|x86.ActiveCfg = Release|x86
+		{8731423A-8ED4-4C09-83FF-17CEAC5C6A09}.Release|x86.Build.0 = Release|x86
+		{3A8D1365-D491-44B6-9760-937905F5ADEF}.Debug|x86.ActiveCfg = Debug|x86
+		{3A8D1365-D491-44B6-9760-937905F5ADEF}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
