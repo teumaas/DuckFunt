@@ -216,15 +216,5 @@ namespace WiimoteTest
 		{
 			set { mWiimote = value; }
 		}
-
-        private void lblAccel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox5_Enter(object sender, EventArgs e)
-        {
-
-        }
 	}
 }
