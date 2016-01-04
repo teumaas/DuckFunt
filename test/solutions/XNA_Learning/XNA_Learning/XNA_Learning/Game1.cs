@@ -24,13 +24,21 @@ namespace XNA_Learning
         private SpriteBatch spriteBatch;
         private SpriteFont font;
         private SoundEffect sound;
+        private Vector2 ufoDir;
+        private WiimoteCollection wMC;
 
         private Sprite sprite;
         private Sprite enemySprite;
         private Wiimote wm;
-
+        private Ufo ufo;
+        public SpriteEffects flip; 
+        
         private float wY;
         private float wX;
+        private float screenWidth;
+        private float screenHeight;
+
+        private int y;
         
         public Game1()
         {
@@ -44,10 +52,13 @@ namespace XNA_Learning
             Content.RootDirectory = "Content";
 
             wm = new Wiimote();
+            y = 0;
 
             wm.Connect();
-            wm.SetLEDs(true, true, false, true);
+            wm.SetLEDs(true, false, false, false);
             //wm.WiimoteState.
+
+            
 
         }
 
@@ -59,7 +70,10 @@ namespace XNA_Learning
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            wMC = new WiimoteCollection();
+            flip = SpriteEffects.FlipHorizontally;
+
+            
             base.Initialize();
         }
 
@@ -73,10 +87,23 @@ namespace XNA_Learning
             spriteBatch = new SpriteBatch(GraphicsDevice);
             // TODO: use this.Content to load your game content here
             sprite = new Sprite(new Vector2(0, 0),
-            Content.Load<Texture2D>("Crosshair"));
+            Content.Load<Texture2D>("Crosshair"), screenWidth);
+            ufo = new Ufo(Content.Load<Texture2D>("Ufo_Resized"), Content.Load<Texture2D>("Crosshair"), wm, screenWidth);
             font = Content.Load<SpriteFont>("SpriteFont1");
             sound = Content.Load<SoundEffect>("aud_pistol");
+            screenWidth = Window.ClientBounds.Width;
+            screenHeight = Window.ClientBounds.Height;
 
+            try
+            {
+                wMC.FindAllWiimotes();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            ufo.Initialize();
         }
 
         /// <summary>
@@ -99,14 +126,15 @@ namespace XNA_Learning
             // TODO: Add your update logic here
 
             float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            
+
+            ufo.Shoot(spriteBatch);
             sprite.velocity = new Vector2(0, 0);
 
-            sprite.location.X = wm.WiimoteState.IRState.IRSensors[0].RawPosition.X;
-            sprite.location.Y = wm.WiimoteState.IRState.IRSensors[0].RawPosition.Y;
-
-            wX = wm.WiimoteState.IRState.IRSensors[0].RawPosition.X * 7000;
-            wY = wm.WiimoteState.IRState.IRSensors[0].RawPosition.Y * 6000;
+            sprite.location.X = wm.WiimoteState.IRState.IRSensors[0].RawPosition.X; //wm.WiimoteState.IRState.IRSensors[0].Position.X; 
+            sprite.location.Y = wm.WiimoteState.IRState.IRSensors[2].RawPosition.Y;
+        
+            wX = wm.WiimoteState.IRState.IRSensors[0].RawPosition.X;
+            wY = wm.WiimoteState.IRState.IRSensors[0].RawPosition.Y;
 
             if (wm.WiimoteState.ButtonState.Home)
             {
@@ -115,11 +143,12 @@ namespace XNA_Learning
           
             if (wm.WiimoteState.ButtonState.B)
             {
-                wm.PlayAudioFile(@"C:\Users\Tom\Dropbox\XNA\XNA_Learning\XNA_Learning\XNA_LearningContent\aud_pistol.wav");
+                
             }
             
 
             sprite.Update(elapsed);
+            ufo.Update(screenWidth, screenHeight, wX, wY);
             base.Update(gameTime);
 
             
@@ -135,9 +164,12 @@ namespace XNA_Learning
             
             // TODO: Add your drawing code here
             spriteBatch.Begin();
-            sprite.Draw(spriteBatch);
+            
+            ufo.Draw(spriteBatch);
+            sprite.Draw(spriteBatch, wX, wY);
             spriteBatch.DrawString(font, wY.ToString(), new Vector2(10, 10), Color.White);
             spriteBatch.DrawString(font, wX.ToString(), new Vector2(10, 30), Color.White);
+            spriteBatch.DrawString(font, ufo.score.ToString(), new Vector2(870, 10), Color.White);
             spriteBatch.End();
             base.Draw(gameTime);
         }

@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <ProjectGuid>{8731423A-8ED4-4C09-83FF-17CEAC5C6A09}</ProjectGuid>
+    <ProjectGuid>{6B88A67B-FF69-4613-B2A3-763068142841}</ProjectGuid>
     <ProjectTypeGuids>{6D335F3A-9D43-41b4-9D22-F6F17C4BE596};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XNA_Learning</RootNamespace>
-    <AssemblyName>XNA_Learning</AssemblyName>
+    <RootNamespace>MoodBoard</RootNamespace>
+    <AssemblyName>MoodBoard</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <XnaFrameworkVersion>v4.0</XnaFrameworkVersion>
     <XnaPlatform>Windows</XnaPlatform>
     <XnaProfile>Reach</XnaProfile>
-    <XnaCrossPlatformGroupID>3024cc7e-99dd-4091-a1a0-9c8bb738d317</XnaCrossPlatformGroupID>
+    <XnaCrossPlatformGroupID>8fd4d813-03ae-47e7-b641-0b22cb9aecb3</XnaCrossPlatformGroupID>
     <XnaOutputType>Game</XnaOutputType>
     <ApplicationIcon>Game.ico</ApplicationIcon>
     <Thumbnail>GameThumbnail.png</Thumbnail>
@@ -70,16 +70,11 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Net" />
-    <Reference Include="WiimoteLib">
-      <HintPath>..\..\..\..\..\tools\WiimoteLib_1.8\WiimoteLib.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="Sprite.cs" />
-    <Compile Include="Ufo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
@@ -88,8 +83,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\XNA_LearningContent\XNA_LearningContent.contentproj">
-      <Name>XNA_LearningContent</Name>
+    <ProjectReference Include="..\MoodBoardContent\MoodBoardContent.contentproj">
+      <Name>MoodBoardContent</Name>
       <XnaReferenceType>Content</XnaReferenceType>
     </ProjectReference>
   </ItemGroup>
