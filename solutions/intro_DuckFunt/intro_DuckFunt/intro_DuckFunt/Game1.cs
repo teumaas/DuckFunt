@@ -68,7 +68,7 @@ namespace intro_DuckFunt
             frames = 1;
             frameHeight = 50;
             heroSheet = Content.Load<Texture2D>("sprites");
-            textBox = new Rectangle(100, 50, 32, 32);
+            textBox = new Rectangle(100, 40, 32, 32);
             back = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
             pos = new Vector2(0, 0);
             color = Color.White;
@@ -111,7 +111,7 @@ namespace intro_DuckFunt
 
             fade.DrawFade(gameTime, spriteBatch, elapsed);
 
-            if (typedTextLength >= 200 && heroRec.Y <= 350)// && i >= 154
+            if (typedTextLength >= 200 && typedTextLength <= text.Length - 50)// && i >= 154
             {
                 pos += new Vector2(-0.0f, -0.15f);
 
