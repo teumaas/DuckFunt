@@ -47,7 +47,7 @@ namespace intro_DuckFunt
         int delayInMilliseconds;
         bool isDoneDrawing;
         float elapsed;
-        float delay = 300f;
+        float delay = 500f;
         int i;
         int frames;
         int oneFrame;
@@ -111,9 +111,11 @@ namespace intro_DuckFunt
 
             fade.DrawFade(gameTime, spriteBatch, elapsed);
 
-            if (pos.Y >= -50 && typedTextLength >= 200 && i >= 154)
+            if (typedTextLength >= 200 && heroRec.Y <= 350)// && i >= 154
             {
                 pos += new Vector2(-0.0f, -0.15f);
+
+                elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
                 if (elapsed >= delay)
                 {
