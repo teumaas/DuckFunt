@@ -26,6 +26,11 @@ namespace SpaceHunt
         public int startLocY;
         Rectangle rectBG;
         Texture2D backGroundtexture;
+
+        private MenuScreen()
+        {
+
+        }
         public MenuScreen(ContentManager content, GraphicsDeviceManager GraphDeviceManager, SpriteBatch spriteBatch)
         {
             this.sprites = spriteBatch;

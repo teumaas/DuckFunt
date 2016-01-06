@@ -90,7 +90,6 @@
     <Compile Include="EnemyArmed.cs" />
     <Compile Include="EnemyBoss.cs" />
     <Compile Include="Gamescreen.cs" />
-    <Compile Include="InteractionState.cs" />
     <Compile Include="Introscreen.cs" />
     <Compile Include="Laser.cs" />
     <Compile Include="Level.cs" />

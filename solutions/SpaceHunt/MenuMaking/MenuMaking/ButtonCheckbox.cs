@@ -8,5 +8,9 @@ namespace SpaceHunt
     class ButtonCheckbox
     {
         ButtonCheckboxResolution buttonCheckboxResolution;//ButtonCheckboxResolution
+        private ButtonCheckbox()
+        {
+
+        }
     }
 }

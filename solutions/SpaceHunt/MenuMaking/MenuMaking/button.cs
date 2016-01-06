@@ -11,5 +11,10 @@ namespace SpaceHunt
         ButtonOption buttonOption;//ButtonOption
         ButtonPlanet buttonPlanet;//ButtonPlanet
         ButtonTrackbar buttonTrackbar;//ButtonTrackbar
+
+        private Button()
+        {
+
+        }
     }
 }

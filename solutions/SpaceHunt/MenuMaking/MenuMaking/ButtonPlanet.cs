@@ -7,5 +7,9 @@ namespace SpaceHunt
 {
     class ButtonPlanet
     {
+        private ButtonPlanet()
+        {
+
+        }
     }
 }

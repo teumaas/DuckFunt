@@ -14,7 +14,7 @@ namespace SpaceHunt
         SoundEffect mp5Shot;
         ContentManager content;
 
-        private void initialize()
+        private Mp5()
         {
             mp5Shot = content.Load<SoundEffect>("aud_mp5");
         }

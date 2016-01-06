@@ -19,6 +19,10 @@ namespace SpaceHunt
         //{
         //    state = Mouse.GetState();
         //}
+        private CursorUpdater()
+        {
+
+        }
         public int GetCursX()
         {
             state = Mouse.GetState();

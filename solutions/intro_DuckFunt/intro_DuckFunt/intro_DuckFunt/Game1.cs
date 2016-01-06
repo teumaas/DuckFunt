@@ -184,7 +184,7 @@ namespace intro_DuckFunt
 
             spriteBatch.Begin();
             spriteBatch.Draw(pic, back, color);
-            spriteBatch.DrawString(font, typedText, new Vector2(textBox.X, textBox.Y), Color.White);
+            spriteBatch.DrawString(font, typedText, new Vector2(textBox.X, textBox.Y), Color.Black);
             spriteBatch.End();
 
             heroBatch.Begin();

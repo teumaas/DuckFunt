@@ -13,7 +13,7 @@ namespace SpaceHunt
         SoundEffect minigunShot;
         ContentManager content;
 
-        private void initialize()
+        private Minigun()
         {
             minigunShot = content.Load<SoundEffect>("aud_minigun");
         }

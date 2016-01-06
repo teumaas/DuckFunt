@@ -9,5 +9,10 @@ namespace SpaceHunt
     {
         Actor actor; //Actor
         Level level; // Level
+
+        private GameScreen()
+        {
+
+        }
     }
 }

@@ -8,6 +8,9 @@ namespace SpaceHunt
     class Weapon
     {
         public bool isNotPlayingSound;
+        int ammo;
+        int magazine;
+        int fireRate;
         //Pistol pistol;
         //Mp5 mp5;
         //Ak47 ak47;

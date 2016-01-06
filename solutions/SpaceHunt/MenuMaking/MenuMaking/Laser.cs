@@ -16,7 +16,7 @@ namespace SpaceHunt
         SoundEffect laserReload;
         ContentManager content;
 
-        private void initialize()
+        private void SpaceHunt()
         {
             laserShot = content.Load<SoundEffect>("aud_laser_shot");
             laserReload = content.Load<SoundEffect>("aud_laser_load");

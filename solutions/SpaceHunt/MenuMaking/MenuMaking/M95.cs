@@ -17,7 +17,7 @@ namespace SpaceHunt
         ContentManager content;
         
 
-        private void initialize()
+        private M95()
         {
             m95Shot = content.Load<SoundEffect>("aud_m95");
             m95Rechamber = content.Load<SoundEffect>("aud_m95_rechamber");

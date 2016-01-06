@@ -18,7 +18,7 @@ namespace SpaceHunt
         SoundEffect ak47ReloadShort;
         ContentManager content;
 
-        private void initialize()
+        private Ak47()
         {
             ak47Shot = content.Load<SoundEffect>("aud_ak47");
             ak47ReloadLong = content.Load<SoundEffect>("aud_ak47-l");

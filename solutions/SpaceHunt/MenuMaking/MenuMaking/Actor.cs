@@ -10,5 +10,9 @@ namespace SpaceHunt
         Enemy enemy;//enemy
         Companion companion;//companion
         Player player;//player
+        private Actor()
+        {
+
+        }
     }
 }

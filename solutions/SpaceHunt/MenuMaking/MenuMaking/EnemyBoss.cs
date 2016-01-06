@@ -7,5 +7,9 @@ namespace SpaceHunt
 {
     class EnemyBoss
     {
+        private EnemyBoss()
+        {
+
+        }
     }
 }

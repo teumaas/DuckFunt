@@ -8,5 +8,9 @@ namespace SpaceHunt
     class Level
     {
         Weapon weapon;
+        private Level()
+        {
+
+        }
     }
 }

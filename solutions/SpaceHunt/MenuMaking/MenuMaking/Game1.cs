@@ -18,6 +18,7 @@ namespace SpaceHunt
     /// </summary>
     public class SpaceHunt : Microsoft.Xna.Framework.Game
     {
+        private CursorUpdater cursorUpdater;
         private Screens screens;//Screens
         private WiimoteHandler wiimoteHandler;//WiimoteHandler
         private MessageBox messageBox;//Messagebox
@@ -104,12 +105,12 @@ namespace SpaceHunt
             {
                 Environment.Exit(0);
             }
-                if (wm.WiimoteState.ButtonState.One && wm.WiimoteState.ButtonState.Two)
-            {
-                wm.Disconnect();
-                Environment.Exit(0);
-            }
-            }
+            //    if (wm.WiimoteState.ButtonState.One && wm.WiimoteState.ButtonState.Two)
+            //{
+            //    wm.Disconnect();
+            //    Environment.Exit(0);
+            //}
+            
             // TODO: Add your update logic here
             
             base.Update(gameTime);

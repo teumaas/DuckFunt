@@ -7,5 +7,9 @@ namespace SpaceHunt
 {
     class ButtonTrackbar
     {
+        private ButtonTrackbar()
+        {
+
+        }
     }
 }

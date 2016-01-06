@@ -5,6 +5,12 @@ using System.Text;
 
 namespace SpaceHunt
 {
+    enum InteractionState
+    {
+        shapesource,
+        shapeInteractive,
+        shapeAnimated,
+    }
     class Shape
     {
         ShapeSource shapeSource;//ShapeSource

@@ -9,5 +9,9 @@ namespace SpaceHunt
     {
         EnemyArmed enemyArmed;//EnemyArmed
         EnemyBoss enemyBoss;//EnemyBoss
+        private Enemy()
+        {
+
+        }
     }
 }
