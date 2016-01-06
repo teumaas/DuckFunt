@@ -27,7 +27,6 @@ namespace MenuMaking
         public int startLocY;
         Rectangle rectBG;
         Texture2D backGroundtexture;
-        private SpriteFont gameNameFont;
         private bool fullscreen = false;
         public Menu(ContentManager content, GraphicsDeviceManager graphDeviceManager, SpriteBatch spriteBatch)
         {
@@ -43,7 +42,7 @@ namespace MenuMaking
             
             rectBG = new Rectangle(LocationX, LocationY, width, height);
             sprites.Begin();
-            
+
             backGroundtexture = new Texture2D(graphics.GraphicsDevice , 1 , 1);
             backGroundtexture.SetData(new[] { color });
             sprites.Draw(backGroundtexture, rectBG, color);
@@ -67,8 +66,6 @@ namespace MenuMaking
           // graphics.ApplyChanges();   
             sprites = new SpriteBatch(graphics.GraphicsDevice);
             font = content.Load<SpriteFont>("MenuFont");
-            gameNameFont = content.Load<SpriteFont>("Console");
-
             middleX = graphics.GraphicsDevice.Viewport.Width / 2; // Midden is het helft van de breedte van het beeldscherm
             startLocY = graphics.GraphicsDevice.Viewport.Height  / 4; // Begin op 1 4de van het beeldscherms lengte met het menu
         }
@@ -125,11 +122,6 @@ namespace MenuMaking
         public void Effect(int ItemNo)
         { 
         
-        }
-
-        public void BuildMenuLogo()
-        {
-            
         }
 
 

@@ -27,10 +27,10 @@ namespace MenuMaking
         Texture2D crossHair;
         Texture2D backGround;
         int lettersize;
-        bool boolMenuEnabled = true;
+        bool boolMenuEnabled = false;
         bool enableLeaderboard = false;
 
-        public static bool ScoreEnabled = false;
+        public static bool ScoreEnabled = true;
         int startLocY;
         string[] menuItems = { "Start game", "Local Leadeboard", "Settings", "Itens" };
         public Game1()
@@ -157,7 +157,7 @@ namespace MenuMaking
                 if (ScoreEnabled)
                 {
                     TableManager scoretable = new TableManager(graphics, Content, spriteBatch);
-                    scoretable.DrawTables(new Vector2(90, 5));
+                    scoretable.DrawTables(new Vector2(90, 20));
                 }
                 spriteBatch.Begin();
                 CursorUpdater Crosshair = new CursorUpdater(); // Staat het programma toe muis coordinaten op te halen
