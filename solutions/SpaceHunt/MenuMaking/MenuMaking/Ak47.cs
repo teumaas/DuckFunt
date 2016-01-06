@@ -5,9 +5,9 @@ using System.Text;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 
-namespace MenuMaking
+namespace SpaceHunt
 {
-    class Ak47 : Weapons
+    class Ak47 : Weapon
     // Ak 47 sound
     //DuckFunt\source\audio\done\player\aud_ak47.wav
     //DuckFunt\source\audio\done\player\aud_ak457_reload-s.wav

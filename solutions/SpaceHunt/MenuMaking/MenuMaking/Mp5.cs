@@ -5,9 +5,9 @@ using System.Text;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 
-namespace MenuMaking
+namespace SpaceHunt
 {
-    class Mp5 : Weapons
+    class Mp5 : Weapon
     // Mp5 sound
     //DuckFunt\source\audio\done\player\aud_mp5.wav
     {

@@ -7,7 +7,7 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MenuMaking</RootNamespace>
+    <RootNamespace>SpaceHunt</RootNamespace>
     <AssemblyName>MenuMaking</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
@@ -17,7 +17,8 @@
     <XnaCrossPlatformGroupID>20abfc73-3dc3-4439-aeb3-0999021cb932</XnaCrossPlatformGroupID>
     <XnaOutputType>Game</XnaOutputType>
     <ApplicationIcon>Game.ico</ApplicationIcon>
-    <Thumbnail>sprite\GameThumbnail.png</Thumbnail>
+    <Thumbnail>
+    </Thumbnail>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -75,53 +76,52 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actor.cs" />
     <Compile Include="Ak47.cs" />
-    <Compile Include="Circle.cs" />
+    <Compile Include="Button.cs" />
+    <Compile Include="ButtonCheckbox.cs" />
+    <Compile Include="ButtonCheckboxResolution.cs" />
+    <Compile Include="ButtonOption.cs" />
+    <Compile Include="ButtonPlanet.cs" />
+    <Compile Include="ButtonTrackbar.cs" />
     <Compile Include="CursorUpdater.cs" />
-    <Compile Include="CompanionCode.cs" />
-    <Compile Include="Enemies.cs" />
-    <Compile Include="GameComponent1.cs" />
+    <Compile Include="Companion.cs" />
+    <Compile Include="Enemy.cs" />
+    <Compile Include="EnemyArmed.cs" />
+    <Compile Include="EnemyBoss.cs" />
+    <Compile Include="Gamescreen.cs" />
+    <Compile Include="InteractionState.cs" />
+    <Compile Include="Introscreen.cs" />
     <Compile Include="Laser.cs" />
+    <Compile Include="Level.cs" />
+    <Compile Include="LoadScreen.cs" />
     <Compile Include="M95.cs" />
-    <Compile Include="Menu.cs" />
+    <Compile Include="MenuScreen.cs" />
+    <Compile Include="MessageBox.cs" />
     <Compile Include="Minigun.cs" />
     <Compile Include="Mp5.cs" />
+    <Compile Include="Controls.cs" />
+    <Compile Include="OptionsScreen.cs" />
     <Compile Include="Pistol.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Resolution.cs" />
     <Compile Include="rpg.cs" />
     <Compile Include="Rpg7.cs" />
+    <Compile Include="Screens.cs" />
+    <Compile Include="Shape.cs" />
+    <Compile Include="ShapeAnimated.cs" />
+    <Compile Include="ShapeInteractive.cs" />
+    <Compile Include="ShapeSource.cs" />
     <Compile Include="Sprite.cs" />
-    <Compile Include="Ufo.cs" />
-    <Compile Include="weapons.cs" />
+    <Compile Include="Timer.cs" />
+    <Compile Include="Weapon.cs" />
+    <Compile Include="WiimoteHandler.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="audio\aud_ak47.wav" />
-    <Content Include="audio\aud_amkp457_reload-l.wav" />
-    <Content Include="audio\aud_amkp457_reload-s.wav" />
-    <Content Include="audio\aud_laser_load.wav" />
-    <Content Include="audio\aud_laser_shot.wav" />
-    <Content Include="audio\aud_m95.wav" />
-    <Content Include="audio\aud_m95_rechamber.wav" />
-    <Content Include="audio\aud_minigun.wav" />
-    <Content Include="audio\aud_mp5.wav" />
-    <Content Include="audio\aud_pistol.wav" />
-    <Content Include="audio\aud_pistol_reload-l.wav" />
-    <Content Include="audio\aud_pistol_reload-s.wav" />
-    <Content Include="audio\aud_rpg-1.wav" />
-    <Content Include="audio\aud_rpg-2.wav" />
-    <Content Include="graphic stills\companion_laughing.png" />
-    <Content Include="graphic stills\companion_thumbs_up_1.png" />
-    <Content Include="graphic stills\companion_thumbs_up_2.png" />
     <Content Include="Game.ico" />
-    <Content Include="sprite\GameThumbnail.png">
-      <XnaPlatformSpecific>true</XnaPlatformSpecific>
-    </Content>
-    <None Include="sprite\img_hostile_common_1_resize.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <Content Include="sprite\Ufo_Resized.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MenuMakingContent\MenuMakingContent.contentproj">

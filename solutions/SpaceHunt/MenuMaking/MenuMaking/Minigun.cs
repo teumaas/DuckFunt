@@ -5,9 +5,9 @@ using System.Text;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 
-namespace MenuMaking
+namespace SpaceHunt
 {
-    class Minigun : Weapons
+    class Minigun : Weapon
         // Minigun sound
     {
         SoundEffect minigunShot;

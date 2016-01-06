@@ -9,23 +9,24 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
-namespace MenuMaking
+namespace SpaceHunt
 {
-    class Menu //: Microsoft.Xna.Framework.DrawableGameComponent
+    class MenuScreen //: Microsoft.Xna.Framework.DrawableGameComponent
     {
-        
+        OptionsScreen optionScreen; //OptionScreen
+
         private SpriteFont font;
         int lettersize;
         SpriteBatch sprites;
         bool boolMenuEnabled = true;
-        string[] menuItems = { "Start game", "Local Leadeboard", "Settings", "Items" };
+        string[] menuItems = { "Start game", "Local Leaderboard", "Settings", "Exit" };
         GraphicsDeviceManager graphics;
         ContentManager content;
         public int middleX;
         public int startLocY;
         Rectangle rectBG;
         Texture2D backGroundtexture;
-        public Menu(ContentManager content, GraphicsDeviceManager GraphDeviceManager, SpriteBatch spriteBatch)
+        public MenuScreen(ContentManager content, GraphicsDeviceManager GraphDeviceManager, SpriteBatch spriteBatch)
         {
             this.sprites = spriteBatch;
             this.graphics = GraphDeviceManager;

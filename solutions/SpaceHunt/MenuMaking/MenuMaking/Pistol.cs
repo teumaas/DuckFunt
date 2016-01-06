@@ -5,9 +5,9 @@ using System.Text;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 
-namespace MenuMaking
+namespace SpaceHunt
 {
-    class Pistol : Weapons
+    class Pistol : Weapon
     // Pistol sound
     //DuckFunt\source\audio\done\player\aud_pistol.wav
     //DuckFunt\source\audio\done\player\aud_pistol_reload-l.wav 

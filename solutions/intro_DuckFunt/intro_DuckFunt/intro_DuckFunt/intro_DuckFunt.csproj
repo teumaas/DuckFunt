@@ -89,7 +89,9 @@
     <Content Include="sprite_1.png" />
     <Content Include="sprite_2.png" />
     <Content Include="sprite_3.png" />
-    <Content Include="story.txt" />
+    <None Include="story.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <Content Include="test_intro.png" />
     <Content Include="tick_sound.wav" />
   </ItemGroup>

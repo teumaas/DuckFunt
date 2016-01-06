@@ -116,7 +116,7 @@ namespace intro_DuckFunt
                 pos += new Vector2(-0.0f, -0.15f);
 
                 elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-
+                
                 if (elapsed >= delay)
                 {
                     if (recHeight >= 46)

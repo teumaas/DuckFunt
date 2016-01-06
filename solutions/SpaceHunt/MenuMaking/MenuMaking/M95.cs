@@ -5,9 +5,9 @@ using System.Text;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 
-namespace MenuMaking
+namespace SpaceHunt
 {
-    class M95 : Weapons
+    class M95 : Weapon
     // Sniper sound
     //DuckFunt\source\audio\done\player\aud_m95.wav
     //DuckFunt\source\audio\done\player\aud_m95_rechamber.wav

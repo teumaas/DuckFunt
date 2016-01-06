@@ -18,11 +18,11 @@ namespace intro_DuckFunt
         Texture2D pic;
         Vector2 pos;
         Rectangle back;
-        
+
         byte R, G, B;
         int i;
 
-        public Fade( Texture2D pic, Vector2 pos, Rectangle back)
+        public Fade(Texture2D pic, Vector2 pos, Rectangle back)
         {
             this.pic = pic;
             this.pos = pos;

@@ -5,9 +5,9 @@ using System.Text;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 
-namespace MenuMaking
+namespace SpaceHunt
 {
-    class Laser : Weapons
+    class Laser : Weapon
     // Laser sound
     //DuckFunt\source\audio\done\player\aud_laser_load.wav
     //DuckFunt\source\audio\done\player\aud_laser_shot.wav
