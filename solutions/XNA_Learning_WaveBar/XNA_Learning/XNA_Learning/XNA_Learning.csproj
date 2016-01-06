@@ -71,7 +71,7 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Net" />
     <Reference Include="WiimoteLib">
-      <HintPath>..\..\..\Nieuwe map (2)\WiimoteLib.dll</HintPath>
+      <HintPath>..\..\..\..\Dropbox\WIimote\WiimoteLib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

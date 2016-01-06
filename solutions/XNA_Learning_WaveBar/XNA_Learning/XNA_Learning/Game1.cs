@@ -24,6 +24,7 @@ namespace XNA_Learning
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
         private SpriteFont font;
+        private SpriteFont font2;
         private SoundEffect sound;
 
         private Texture2D waveBarFrame;
@@ -33,6 +34,7 @@ namespace XNA_Learning
 
         private Vector2 ufoDir;
         private Vector2 waveBar;
+        private Vector2 waveText;
         private Rectangle barValue;
         private WiimoteCollection wMC;
 
@@ -124,6 +126,7 @@ namespace XNA_Learning
             ufo = new Ufo(Content.Load<Texture2D>("Ufo_Resized"), Content.Load<Texture2D>("Crosshair"), wm, screenWidth);
 
             font = Content.Load<SpriteFont>("SpriteFont1");
+            font2 = Content.Load<SpriteFont>("SpriteFont2");
             sound = Content.Load<SoundEffect>("aud_pistol");
 
             screenWidth = Window.ClientBounds.Width;
@@ -182,6 +185,7 @@ namespace XNA_Learning
 
             ufo.Shoot(spriteBatch);
             sprite.velocity = new Vector2(0, 0);
+            waveText = new Vector2(390, 330);
 
             sprite.location.X = mouseState.X; //wm.WiimoteState.IRState.IRSensors[0].Position.X; 
             sprite.location.Y = mouseState.Y;
@@ -201,7 +205,6 @@ namespace XNA_Learning
 
             }
 
-
             sprite.Update(elapsed);
 
             ufo.Update(screanWidth, graphics.PreferredBackBufferHeight, wX, wY);
@@ -212,6 +215,52 @@ namespace XNA_Learning
             base.Update(gameTime);
 
 
+        }
+
+        protected void WaveCount()
+        {
+
+
+            if (ufo.addValue == 50)
+            {
+                spriteBatch.DrawString(font2, "Wave 2", waveText, Color.White);
+            }
+            if (ufo.addValue == 100)
+            {
+                spriteBatch.DrawString(font2, "Wave 3", waveText, Color.White);
+            }
+            if (ufo.addValue == 150)
+            {
+                spriteBatch.DrawString(font2, "Wave 4", waveText, Color.White);
+            }
+            if (ufo.addValue == 200)
+            {
+                spriteBatch.DrawString(font2, "Wave 5", waveText, Color.White);
+            }
+            if (ufo.addValue == 250)
+            {
+                spriteBatch.DrawString(font2, "Wave 6", waveText, Color.White);
+            }
+            if (ufo.addValue == 300)
+            {
+                spriteBatch.DrawString(font2, "Wave 7", waveText, Color.White);
+            }
+            if (ufo.addValue == 350)
+            {
+                spriteBatch.DrawString(font2, "Wave 8", waveText, Color.White);
+            }
+            if (ufo.addValue == 400)
+            {
+                spriteBatch.DrawString(font2, "Wave 9", waveText, Color.White);
+            }
+            if (ufo.addValue == 450)
+            {
+                spriteBatch.DrawString(font2, "Wave 10", waveText, Color.White);
+            }
+            if (ufo.addValue == 500)
+            {
+                spriteBatch.DrawString(font2, "Done!", waveText, Color.White);
+            }
         }
 
         /// <summary>
@@ -233,6 +282,7 @@ namespace XNA_Learning
             sprite.Draw(spriteBatch, wX, wY);
             spriteBatch.DrawString(font, wY.ToString(), new Vector2(10, 10), Color.White);
             spriteBatch.DrawString(font, wX.ToString(), new Vector2(10, 30), Color.White);
+            WaveCount();
             spriteBatch.DrawString(font, ufo.score.ToString(), new Vector2(870, 10), Color.White);
             spriteBatch.Draw(waveBarProgress, waveBar, barValue, Color.White);
             spriteBatch.Draw(waveBarFrame, waveBar, Color.White);
