@@ -1,13 +1,13 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using SpaceHuntClasses.Screens;
+using SpaceHunt.Screens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SpaceHuntClasses.MessageBoxs
+namespace SpaceHunt
 {
     abstract class MessageBox
     {
@@ -23,7 +23,7 @@ namespace SpaceHuntClasses.MessageBoxs
                 
         public virtual void Draw(SpriteBatch batch)
         {
-            batch.Draw(Utility.GetBlackTexture(), new Rectangle(0, 0, 1920, 1080), Color.Black * backgroundTransparency);
+            //batch.Draw(Utility.GetBlackTexture(), new Rectangle(0, 0, 1920, 1080), Color.Black * backgroundTransparency);
         }
         
     }

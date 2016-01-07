@@ -6,18 +6,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SpaceHuntClasses.Shapes
+namespace SpaceHunt.Shapes
 {
-    public delegate void InteractionEventHandler(object sender, InteractionEventArgs e);
+    //public delegate void InteractionEventHandler(object sender, InteractionEventArgs e);
     public enum InteractionState { None, Hover, Down, Release };
 
     public class ShapeInteractive : Shape
     {
         public InteractionState state { get; set; }
 
-        public event InteractionEventHandler Click;
-        public event InteractionEventHandler Hover;
-        public event InteractionEventHandler Release;
+        //public event InteractionEventHandler Click;
+        //public event InteractionEventHandler Hover;
+        //public event InteractionEventHandler Release;
 
         public ShapeInteractive(Rectangle rectangle) : base(rectangle)
         {
@@ -43,10 +43,10 @@ namespace SpaceHuntClasses.Shapes
                     if (state == InteractionState.Hover)
                     {
                         state = InteractionState.Down;
-                        if (Click != null)
-                        {
-                            Click(this, new InteractionEventArgs(state));
-                        }
+                        //if (click != null)
+                        //{
+                        //    click(this, new interactioneventargs(state));
+                        //}
                     }
                 }
                 else //ButtonState.Release
@@ -54,18 +54,18 @@ namespace SpaceHuntClasses.Shapes
                     if (state == InteractionState.Down)
                     {
                         state = InteractionState.Release;
-                        if (Release != null)
-                        {
-                            Release(this, new InteractionEventArgs(state));
-                        }
+                        //if (Release != null)
+                        //{
+                        //    Release(this, new InteractionEventArgs(state));
+                        //}
                     }
                     else
                     {
                         state = InteractionState.Hover;
-                        if (Hover != null)
-                        {
-                            Hover(this, new InteractionEventArgs(state));
-                        }
+                        //if (Hover != null)
+                        //{
+                        //    Hover(this, new InteractionEventArgs(state));
+                        //}
                     }
                 }
             }

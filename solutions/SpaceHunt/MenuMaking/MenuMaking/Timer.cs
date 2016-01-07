@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SpaceHuntClasses
+namespace SpaceHunt
 {
     public delegate void TimerEventHandler(object sender, EventArgs e);
 
