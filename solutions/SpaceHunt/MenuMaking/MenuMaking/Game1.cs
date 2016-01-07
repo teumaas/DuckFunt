@@ -26,7 +26,7 @@ namespace SpaceHunt
         private Shape shape;//Shape
         private Resolution resolution;//resolution
         private GameState state; //Gamestate
-        private Wiimote wm;
+        private Wiimote wiimote;
 
         void Window_ClientSizeChanged(object sender, EventArgs e)
         {
@@ -105,9 +105,9 @@ namespace SpaceHunt
             {
                 Environment.Exit(0);
             }
-            //    if (wm.WiimoteState.ButtonState.One && wm.WiimoteState.ButtonState.Two)
+            //    if (wiimote.WiimoteState.ButtonState.One && wiimote.WiimoteState.ButtonState.Two)
             //{
-            //    wm.Disconnect();
+            //    wiimote.Disconnect();
             //    Environment.Exit(0);
             //}
             
