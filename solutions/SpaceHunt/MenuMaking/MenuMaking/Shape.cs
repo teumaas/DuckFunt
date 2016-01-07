@@ -1,21 +1,51 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SpaceHunt
+namespace SpaceHuntClasses
 {
-    enum InteractionState
+    public class Shape
     {
-        shapesource,
-        shapeInteractive,
-        shapeAnimated,
+        protected Texture2D texture;
+        public Rectangle rectangle;
+
+
+        public Shape(Rectangle rectangle)
+        {
+            this.rectangle = rectangle;
+        }
+
+        public Shape(Texture2D texture, Rectangle rectangle)
+        {
+            this.texture = texture;
+            this.rectangle = rectangle;
+        }
+
+
+        public virtual void Draw(SpriteBatch batch)
+        {
+            if(texture != null)
+                batch.Draw(texture, rectangle, Color.White);
+        }
     }
-    class Shape
-    {
-        ShapeSource shapeSource;//ShapeSource
-        ShapeInteractive shapeInteractive;//ShapeInteractive
-        ShapeAnimated shapeAnimated;//ShapeAnimated
-        InteractionState interactionState;//InteractionState
-    }
+
+
+    
+
+
+
+    
+
+
+
+
+
+
+
+
+    
 }

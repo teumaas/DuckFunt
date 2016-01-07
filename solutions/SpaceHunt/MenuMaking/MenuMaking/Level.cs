@@ -8,6 +8,10 @@ namespace SpaceHunt
     class Level
     {
         Weapon weapon;
+        //Texture2D background;
+        //Wave wave;
+        //Wave currentWave;
+
         private Level()
         {
 

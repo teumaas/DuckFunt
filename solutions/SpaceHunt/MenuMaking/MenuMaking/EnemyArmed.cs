@@ -7,6 +7,11 @@ namespace SpaceHunt
 {
     class EnemyArmed
     {
+        int damage;
+        int gunShape;
+        int fireRate;
+        int fireTiming;
+        //SoundEffect shootSound;
         private EnemyArmed()
         {
 

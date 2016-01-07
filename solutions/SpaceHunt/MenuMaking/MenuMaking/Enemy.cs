@@ -9,6 +9,11 @@ namespace SpaceHunt
     {
         EnemyArmed enemyArmed;//EnemyArmed
         EnemyBoss enemyBoss;//EnemyBoss
+        int health;
+        float velocity;
+        //InteractiveShape ufoInteractiveShape;
+        //AnimatedShape ufoDeadAnimatedShape
+        //AnimatedShape alienAnimatedShape
         private Enemy()
         {
 

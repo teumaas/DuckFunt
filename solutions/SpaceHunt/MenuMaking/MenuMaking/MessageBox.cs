@@ -1,15 +1,30 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using SpaceHuntClasses.Screens;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SpaceHunt
+namespace SpaceHuntClasses.MessageBoxs
 {
-    class MessageBox
+    abstract class MessageBox
     {
-        private MessageBox()
-        {
+        private float backgroundTransparency;
+        protected Rectangle rectangle;
+        protected string text;
 
+        public MessageBox(Resolution resolution)
+        {
+            backgroundTransparency = 0f;
+            //rectangle = new Rectangle(resolution.width /2, resolution.height / 2, resolution)
         }
+                
+        public virtual void Draw(SpriteBatch batch)
+        {
+            batch.Draw(Utility.GetBlackTexture(), new Rectangle(0, 0, 1920, 1080), Color.Black * backgroundTransparency);
+        }
+        
     }
 }
