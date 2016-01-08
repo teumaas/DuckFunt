@@ -166,20 +166,32 @@ namespace XNA_Learning
             ufo.Shoot(spriteBatch);
             sprite.velocity = new Vector2(0, 0);
 
-            sprite.location.X = wm.WiimoteState.IRState.IRSensors[0].RawPosition.X; //wm.WiimoteState.IRState.IRSensors[0].Position.X; 
-            sprite.location.Y = wm.WiimoteState.IRState.IRSensors[2].RawPosition.Y;
+            sprite.location.X = wm.WiimoteState.IRState.IRSensors[0].RawPosition.X; //1.0
+            sprite.location.Y = wm.WiimoteState.IRState.IRSensors[2].RawPosition.Y; //1023.0
 
             wX = wm.WiimoteState.IRState.IRSensors[0].RawPosition.X;
             wY = wm.WiimoteState.IRState.IRSensors[0].RawPosition.Y;
 
-            if (wm.WiimoteState.ButtonState.Home)
+
+            if (wm.WiimoteState.ButtonState.A)         //Crouch
             {
-                Exit();
+                Window.Title = "Crouch";
             }
-
-            if (wm.WiimoteState.ButtonState.B)
+            else if (wm.WiimoteState.ButtonState.B)    //Shoot
             {
-
+                Window.Title = "Shoot";
+            }
+            else if (wm.WiimoteState.AccelState.RawValues.Y >= 200) //reload
+            {
+                Window.Title = "Reload";
+            }
+            else if (wm.WiimoteState.ButtonState.Home) //menu
+            {
+                Window.Title = "Menu";
+            } 
+            else if (wm.WiimoteState.ButtonState.Plus && wm.WiimoteState.ButtonState.Minus)
+            {
+                Window.Title = "HACKER";
             }
 
 
