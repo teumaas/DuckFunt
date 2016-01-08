@@ -21,3 +21,19 @@ afw:
 ma 04-01
 tl:
 afw: floris raoul henk
+
+di 05-01
+tl: dimitri henk
+afw: raoul
+
+wo 06-01
+tl: 
+afw: anthony raoul
+
+do 07-01
+tl: anthony
+afw: dimitri raoul 
+
+vr 08-01
+tl: anthony
+afw: santino raoul (kevin)
