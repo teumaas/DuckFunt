@@ -30,7 +30,7 @@
       <Entity type="Class">
         <Name>IntroScreen</Name>
         <Access>Public</Access>
-        <Location left="1421" top="683" />
+        <Location left="1315" top="683" />
         <Size width="301" height="655" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private Rectangle spriteBatch</Member>
@@ -82,7 +82,7 @@
         <Member type="Field">public IntroScreen introScreen</Member>
         <Member type="Field">public options GameState</Member>
         <Member type="Constructor">public SpaceHunt()</Member>
-        <Member type="Method">protected override void Initialize()</Member>
+        <Member type="Method">protected override void Initialize(GraphicsInfos graphicsInfos)</Member>
         <Member type="Method">protected override void LoadContent()</Member>
         <Member type="Method">protected override void UnloadContent()</Member>
         <Member type="Method">protected override void Update(GameTime gameTime)</Member>
@@ -101,7 +101,7 @@
       <Entity type="Class">
         <Name>MenuScreen</Name>
         <Access>Public</Access>
-        <Location left="1902" top="683" />
+        <Location left="1913" top="683" />
         <Size width="234" height="655" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private SpaceHunt spaceHunt</Member>
@@ -146,7 +146,7 @@
       <Entity type="Enum">
         <Name>GameState</Name>
         <Access>Public</Access>
-        <Location left="2785" top="683" />
+        <Location left="2894" top="683" />
         <Size width="162" height="129" />
         <Collapsed>False</Collapsed>
         <Value>InGame</Value>
@@ -182,7 +182,7 @@
       <Entity type="Class">
         <Name>AK47</Name>
         <Access>Public</Access>
-        <Location left="2136" top="2346" />
+        <Location left="2008" top="2227" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Constructor">public AK47()</Member>
@@ -200,7 +200,7 @@
       <Entity type="Class">
         <Name>RPG</Name>
         <Access>Public</Access>
-        <Location left="2190" top="2044" />
+        <Location left="1849" top="2127" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Constructor">public RPG()</Member>
@@ -249,11 +249,14 @@
         <Size width="278" height="280" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private float backgroundTransparency</Member>
-        <Member type="Field">private Timer newField</Member>
         <Member type="Field">protected Rectangle rectangle</Member>
         <Member type="Field">protected string text</Member>
-        <Member type="Constructor">public MessageBox()</Member>
+        <Member type="Field">private SpriteFont font</Member>
+        <Member type="Field">public MessageBoxEventHandler firstButtonOnRelease</Member>
+        <Member type="Field">public MessageBoxEventHandler secondButtonOnRelease</Member>
+        <Member type="Constructor">public MessageBox(SpriteFont font, Resolution resolution)</Member>
         <Member type="Method">public void Draw(SpriteBatch batch)</Member>
+        <Member type="Method">public void Update()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -276,7 +279,7 @@
       <Entity type="Class">
         <Name>EnemyArmed</Name>
         <Access>Public</Access>
-        <Location left="82" top="2109" />
+        <Location left="82" top="2101" />
         <Size width="247" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private int damage</Member>
@@ -305,13 +308,14 @@
         <Location left="1902" top="1402" />
         <Size width="234" height="254" />
         <Collapsed>False</Collapsed>
+        <Member type="Field">int newField</Member>
         <Member type="Constructor">public OptionScreen()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Button</Name>
         <Access>Public</Access>
-        <Location left="4262" top="1368" />
+        <Location left="4228" top="1368" />
         <Size width="212" height="281" />
         <Collapsed>False</Collapsed>
         <Member type="Constructor">public Button()</Member>
@@ -351,7 +355,7 @@
       <Entity type="Enum">
         <Name>InteractionState</Name>
         <Access>Public</Access>
-        <Location left="3693" top="1368" />
+        <Location left="3651" top="1368" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Value>None</Value>
@@ -380,7 +384,7 @@
       <Entity type="Class">
         <Name>LoadScreen</Name>
         <Access>Public</Access>
-        <Location left="993" top="1453" />
+        <Location left="942" top="1468" />
         <Size width="227" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Constructor">public LoadScreen()</Member>
@@ -389,7 +393,7 @@
       <Entity type="Class">
         <Name>Program</Name>
         <Access>Public</Access>
-        <Location left="2919" top="30" />
+        <Location left="2919" top="15" />
         <Size width="299" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Method">static void Main(string[] args)</Member>
@@ -473,14 +477,15 @@
         <Location left="3831" top="1075" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
-        <Member type="Constructor">public ShapeLabel()</Member>
+        <Member type="Field">private Label label</Member>
+        <Member type="Constructor">public ShapeLabel(SpriteFont font, Vector2 position, string text)</Member>
         <Member type="Method">public override void Draw(SpriteBatch batch)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>ShapeSource</Name>
         <Access>Public</Access>
-        <Location left="3393" top="1075" />
+        <Location left="3396" top="1075" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Constructor">public ShapeSource()</Member>
@@ -489,7 +494,7 @@
       <Entity type="Delegate">
         <Name>InteractionEventHandler</Name>
         <Access>Public</Access>
-        <Location left="4061" top="1368" />
+        <Location left="4026" top="1368" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <ReturnType>void</ReturnType>
@@ -499,7 +504,7 @@
       <Entity type="Class">
         <Name>MessageBoxCountdown</Name>
         <Access>Public</Access>
-        <Location left="3075" top="1075" />
+        <Location left="3163" top="1028" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int newField</Member>
@@ -508,7 +513,7 @@
       <Entity type="Class">
         <Name>InputState</Name>
         <Access>Public</Access>
-        <Location left="2573" top="683" />
+        <Location left="2712" top="683" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int X</Member>
@@ -523,7 +528,7 @@
       <Entity type="Class">
         <Name>InteractionEventArgs</Name>
         <Access>Public</Access>
-        <Location left="3881" top="1368" />
+        <Location left="3831" top="1368" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">interactionState interactionState</Member>
@@ -533,7 +538,7 @@
       <Entity type="Structure">
         <Name>Resolution</Name>
         <Access>Public</Access>
-        <Location left="2357" top="683" />
+        <Location left="2535" top="683" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">public int width</Member>
@@ -553,8 +558,74 @@
       </Entity>
       <Entity type="Comment">
         <Text>i cant make a link here</Text>
-        <Location left="1703" top="1916" />
+        <Location left="1765" top="1836" />
         <Size width="160" height="75" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>TODO : clean it</Text>
+        <Location left="1421" top="751" />
+        <Size width="160" height="75" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>TODO : check if we really need this class</Text>
+        <Location left="3593" top="1167" />
+        <Size width="160" height="75" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>TODO : check if we really need this class</Text>
+        <Location left="3396" top="1167" />
+        <Size width="160" height="75" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>TODO : i need to make a new class</Text>
+        <Location left="4499" top="1870" />
+        <Size width="160" height="75" />
+      </Entity>
+      <Entity type="Class">
+        <Name>Label</Name>
+        <Access>Public</Access>
+        <Location left="4501" top="1052" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private string text</Member>
+        <Member type="Field">private SpriteFont font</Member>
+        <Member type="Field">private Vector2 location</Member>
+        <Member type="Method">public void Draw()</Member>
+        <Member type="Constructor">public Label(SpriteFont font, Vector2 location, string text)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Enum">
+        <Name>InputType</Name>
+        <Access>Public</Access>
+        <Location left="2341" top="683" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>Wiimote</Value>
+        <Value>MouseKeyboard</Value>
+      </Entity>
+      <Entity type="Delegate">
+        <Name>MessageBoxEventHandler</Name>
+        <Access>Public</Access>
+        <Location left="2947" top="1028" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <ReturnType>void</ReturnType>
+      </Entity>
+      <Entity type="Class">
+        <Name>ButtonLabel</Name>
+        <Access>Public</Access>
+        <Location left="4262" top="2110" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GraphicsInfos</Name>
+        <Access>Public</Access>
+        <Location left="2536" top="1031" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
       </Entity>
     </Entities>
     <Relationships>
@@ -618,7 +689,7 @@
           <Y>591</Y>
         </BendPoint>
         <BendPoint relativeToStartShape="False">
-          <X>2852</X>
+          <X>2961</X>
           <Y>658</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
@@ -648,7 +719,7 @@
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>4276</X>
+          <X>4242</X>
           <Y>1343</Y>
         </BendPoint>
         <BendPoint relativeToStartShape="False">
@@ -660,7 +731,7 @@
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="False">
-          <X>4368</X>
+          <X>4334</X>
           <Y>1674</Y>
         </BendPoint>
       </Relationship>
@@ -668,7 +739,7 @@
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="False">
-          <X>4368</X>
+          <X>4334</X>
           <Y>1674</Y>
         </BendPoint>
       </Relationship>
@@ -761,7 +832,7 @@
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
           <X>3045</X>
-          <Y>591</Y>
+          <Y>592</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Composition</AssociationType>
@@ -790,7 +861,7 @@
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="False">
-          <X>4368</X>
+          <X>4334</X>
           <Y>1680</Y>
         </BendPoint>
       </Relationship>
@@ -804,8 +875,12 @@
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>4142</X>
-          <Y>1331</Y>
+          <X>4107</X>
+          <Y>1337</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>4107</X>
+          <Y>1337</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Aggregation</AssociationType>
@@ -814,8 +889,8 @@
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>4142</X>
-          <Y>1331</Y>
+          <X>4107</X>
+          <Y>1332</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Aggregation</AssociationType>
@@ -826,6 +901,30 @@
         <BendPoint relativeToStartShape="False">
           <X>3068</X>
           <Y>243</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="2" second="50">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>3045</X>
+          <Y>592</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="17" second="51">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>3166</X>
+          <Y>988</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Composition</AssociationType>
