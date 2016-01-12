@@ -30,10 +30,6 @@ namespace SpaceHunt
             {
                 
             }
-            else if (wiimote.WiimoteState.ButtonState.Plus && wiimote.WiimoteState.ButtonState.Minus) // cheat point counter
-            {
-                
-            }
         }
     }
 }

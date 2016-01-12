@@ -124,7 +124,7 @@ namespace SpaceHunt
         
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Black);
+            //GraphicsDevice.Clear(Color.Black);
 
                 base.Draw(gameTime);
         }
