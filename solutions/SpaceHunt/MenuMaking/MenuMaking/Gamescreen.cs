@@ -9,6 +9,7 @@ namespace SpaceHunt
     {
         Actor actor; //Actor
         Level level; // Level
+        public Sprite sprite; // Sprite
 
         private GameScreen()
         {

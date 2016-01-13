@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SpaceHunt.Shapes
+namespace SpaceHunt
 {
-    public class ShapeAnimated : Shape
+    public class ShapeAnimated
     {
         private Rectangle sourceRectangle;
         private Action action;
@@ -16,7 +16,6 @@ namespace SpaceHunt.Shapes
 
 
         public ShapeAnimated(Texture2D texture, Rectangle rectangle, Rectangle sourceRectangle, int maxX, int maxY, Action action)
-            : base(texture, rectangle)
         {
             this.sourceRectangle = sourceRectangle;
             this.action = action;
@@ -38,10 +37,10 @@ namespace SpaceHunt.Shapes
             }
         }
 
-        public override void Draw(SpriteBatch batch)
-        {
-            batch.Draw(texture, rectangle, sourceRectangle, Color.White);
-        }
+        //public override void Draw(SpriteBatch batch)
+        //{
+        //    batch.Draw(texture, rectangle, sourceRectangle, Color.White);
+        //}
 
     }
 }

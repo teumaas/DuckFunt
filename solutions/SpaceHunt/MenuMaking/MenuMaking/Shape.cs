@@ -12,8 +12,9 @@ namespace SpaceHunt
     {
         protected Texture2D texture;
         public Rectangle rectangle;
-
-
+        ShapeAnimated animatedShape;
+        ShapeInteractive interactiveShape;
+        private ShapeSource sourceShape;
         public Shape(Rectangle rectangle)
         {
             this.rectangle = rectangle;

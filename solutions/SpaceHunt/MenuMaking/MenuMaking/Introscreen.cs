@@ -1,28 +1,32 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Graphics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+
 
 namespace SpaceHunt
 {
     class IntroScreen
     {
-        //Rectangle spriteBatch;
-        //Rectangle spriteBatch heroBatch;
-        //Rectangle textbox;
-        //Rectangle back;
-        //Rectangle destRec;
-        //Rectangle heroRec;
-        //Texture2D pic;
-        //Texture2D heroSheet;
-        //SpriteFont font;
+        Rectangle spriteBatch;
+        SpriteBatch heroBatch;
+        Rectangle textbox;
+        Rectangle back;
+        Rectangle destRec;
+        Rectangle heroRec;
+        Texture2D pic;
+        Texture2D heroSheet;
+        SpriteFont font;
 
         string text;
         string parsedText;
         string typedText;
-        //SoundEffect snd;
-        //Vector2 pos;
-        //SoundEffectInstance soundEffectIntance;
+        SoundEffect snd;
+        Vector2 pos;
+        SoundEffectInstance soundEffectIntance;
         double typedTextLength;
         int delayInMilliseconds;
         bool isDoneDrawing;
@@ -40,9 +44,8 @@ namespace SpaceHunt
         byte b;
         //Color color;
 
-        private void Introscreen()
-        { 
-
+        private void IntroScreen()
+        {
         }
 
         private void Drawback()
@@ -56,6 +59,10 @@ namespace SpaceHunt
         private double Delay(double milliseconds)
         {
             return milliseconds;
+        }
+        public void Run()
+        { 
+            
         }
     }
 }

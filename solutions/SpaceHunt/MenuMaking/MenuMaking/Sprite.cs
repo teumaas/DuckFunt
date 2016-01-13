@@ -15,6 +15,7 @@ namespace SpaceHunt
         public Texture2D imgAvatar;
         public Rectangle bounds;
         public Color col = Color.White;
+        private GameScreen gameScreen;
 
         public float screenWidth;
 

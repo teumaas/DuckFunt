@@ -7,7 +7,6 @@ namespace SpaceHunt
 {
     class OptionsScreen
     {
-        Controls controls; //Controls 
 
         private OptionsScreen()
         {

@@ -5,23 +5,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SpaceHunt.Shapes
+namespace SpaceHunt
 {
-    public class ShapeSource : Shape
+    public class ShapeSource
     {
         public Rectangle sourceRectangle;
 
 
         public ShapeSource(Texture2D texture, Rectangle rectangle, Rectangle sourceRectangle)
-            : base(texture, rectangle)
         {
             this.sourceRectangle = sourceRectangle;
         }
 
 
-        public override void Draw(SpriteBatch batch)
-        {
-            batch.Draw(texture, rectangle, sourceRectangle, Color.White);
-        }
+        //public override void Draw(SpriteBatch batch)
+        //{
+        //    batch.Draw(texture, rectangle, sourceRectangle, Color.White);
+        //}
     }
 }

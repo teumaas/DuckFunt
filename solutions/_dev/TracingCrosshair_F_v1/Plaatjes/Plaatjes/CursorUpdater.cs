@@ -30,5 +30,6 @@ namespace Plaatjes
             int i = Convert.ToInt32(state.Y);
             return i;
         }
+
      }   
 }

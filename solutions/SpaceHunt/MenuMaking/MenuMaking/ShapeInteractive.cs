@@ -6,27 +6,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SpaceHunt.Shapes
+namespace SpaceHunt
 {
     //public delegate void InteractionEventHandler(object sender, InteractionEventArgs e);
     public enum InteractionState { None, Hover, Down, Release };
 
-    public class ShapeInteractive : Shape
+    public class ShapeInteractive
     {
+        private Button button;
         public InteractionState state { get; set; }
 
         //public event InteractionEventHandler Click;
         //public event InteractionEventHandler Hover;
         //public event InteractionEventHandler Release;
 
-        public ShapeInteractive(Rectangle rectangle) : base(rectangle)
+        public ShapeInteractive(Rectangle rectangle)
         {
-            this.rectangle = rectangle;
             state = InteractionState.None;
         }
 
         public ShapeInteractive(Texture2D texture, Rectangle rectangle)
-            : base(texture, rectangle)
         {
             state = InteractionState.None;
         }
@@ -36,8 +35,8 @@ namespace SpaceHunt.Shapes
         {
             //if(Utility.CheckBorders(rectangle, mouseState.X, mouseState.Y))
 
-            if ((mouseState.X >= rectangle.X && mouseState.X <= rectangle.X + rectangle.Width) && (mouseState.Y >= rectangle.Y && mouseState.Y <= rectangle.Y + rectangle.Height))
-            {
+            //if ((mouseState.X >= rectangle.X && mouseState.X <= rectangle.X + rectangle.Width) && (mouseState.Y >= rectangle.Y && mouseState.Y <= rectangle.Y + rectangle.Height))
+            //{
                 if (mouseState.LeftButton == ButtonState.Pressed)
                 {
                     if (state == InteractionState.Hover)
@@ -48,7 +47,7 @@ namespace SpaceHunt.Shapes
                         //    click(this, new interactioneventargs(state));
                         //}
                     }
-                }
+                
                 else //ButtonState.Release
                 {
                     if (state == InteractionState.Down)

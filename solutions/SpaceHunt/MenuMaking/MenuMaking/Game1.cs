@@ -18,13 +18,14 @@ namespace SpaceHunt
     /// </summary>
     public class SpaceHunt : Microsoft.Xna.Framework.Game
     {
+
+        Controls controls; //Controls 
         private CursorUpdater cursorUpdater;
         private Screens screens;//Screens
         private WiimoteHandler wiimoteHandler;//WiimoteHandler
         private MessageBox messageBox;//Messagebox
         private Timer timer;//Timer
         private Shape shape;//Shape
-        private Resolution resolution;//resolution
         private GameState state; //Gamestate
         private Wiimote wiimote;
 
@@ -48,7 +49,13 @@ namespace SpaceHunt
       
         public SpaceHunt()
         {
-            
+            state = GameState.Intro;
+
+            if (state == GameState.Intro)
+            {
+                
+            }
+
         }
 
         /// <summary>
@@ -105,7 +112,12 @@ namespace SpaceHunt
             {
                 Environment.Exit(0);
             }
-            //    if (wiimote.WiimoteState.ButtonState.One && wiimote.WiimoteState.ButtonState.Two)
+
+            ///
+            ///if wiimote is not connected it will throw nullexeptionerror
+            ///
+
+            //if (wiimote.WiimoteState.ButtonState.One && wiimote.WiimoteState.ButtonState.Two)
             //{
             //    wiimote.Disconnect();
             //    Environment.Exit(0);

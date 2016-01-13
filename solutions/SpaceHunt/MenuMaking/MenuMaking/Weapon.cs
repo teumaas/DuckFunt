@@ -8,6 +8,7 @@ namespace SpaceHunt
     class Weapon
     {
         bool weaponState;
+        bool isFullAuto;
         public bool isNotPlayingSound;
         int maxAmmo;
         int maxMagazine;
@@ -17,6 +18,8 @@ namespace SpaceHunt
         int fireRate;
         int reloadTime;
         
+        
+
         //SoundEffect shootSound;
         //SoundEffect reloadSound;
         //Texture2d reloadAnimationShape;
@@ -30,8 +33,8 @@ namespace SpaceHunt
         //Minigun minigun;
         //Laser laser;
         protected Weapon()
-        { 
-            
+        {
+
         }
 
         private void Shoot() 
