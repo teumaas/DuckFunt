@@ -71,7 +71,7 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Net" />
     <Reference Include="WiimoteLib">
-      <HintPath>..\..\..\..\wii_ressources\WiimotLib_1.7\WiimotLib_1.7\WiimoteLib.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Desktop\Nieuwe map (2)\WiimoteLib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
