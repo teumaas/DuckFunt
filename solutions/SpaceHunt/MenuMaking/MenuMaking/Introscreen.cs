@@ -44,7 +44,7 @@ namespace SpaceHunt
         byte b;
         //Color color;
 
-        private void IntroScreen()
+        public IntroScreen()
         {
         }
 
@@ -52,14 +52,17 @@ namespace SpaceHunt
         {
         
         }
+
         private string ParseText(string text)
         {
             return text;
         }
+
         private double Delay(double milliseconds)
         {
             return milliseconds;
         }
+
         public void Run()
         { 
             

@@ -28,6 +28,7 @@ namespace SpaceHunt
         private Shape shape;//Shape
         private GameState state; //Gamestate
         private Wiimote wiimote;
+        private LoadScreen loadingBar;
 
         void Window_ClientSizeChanged(object sender, EventArgs e)
         {
@@ -67,7 +68,7 @@ namespace SpaceHunt
         /// 
         protected override void Initialize()
         {
-            
+           
             // TODO: Add your initialization logic here
             base.Initialize();
         }
@@ -138,6 +139,8 @@ namespace SpaceHunt
         {
             //GraphicsDevice.Clear(Color.Black);
 
+                
+                
                 base.Draw(gameTime);
         }
     }
