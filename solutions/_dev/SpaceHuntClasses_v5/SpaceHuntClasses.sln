@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceHuntClasses", "SpaceHuntClasses\SpaceHuntClasses\SpaceHuntClasses.csproj", "{9DEE33B5-9421-4140-800A-4A82F32ADF77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceHuntClassesContent", "SpaceHuntClasses\SpaceHuntClassesContent\SpaceHuntClassesContent.contentproj", "{7EE189D7-B79F-4A28-82AC-872F5D2D6DAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9DEE33B5-9421-4140-800A-4A82F32ADF77}.Debug|x86.ActiveCfg = Debug|x86
+		{9DEE33B5-9421-4140-800A-4A82F32ADF77}.Debug|x86.Build.0 = Debug|x86
+		{9DEE33B5-9421-4140-800A-4A82F32ADF77}.Release|x86.ActiveCfg = Release|x86
+		{9DEE33B5-9421-4140-800A-4A82F32ADF77}.Release|x86.Build.0 = Release|x86
+		{7EE189D7-B79F-4A28-82AC-872F5D2D6DAA}.Debug|x86.ActiveCfg = Debug|x86
+		{7EE189D7-B79F-4A28-82AC-872F5D2D6DAA}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+EndGlobal
