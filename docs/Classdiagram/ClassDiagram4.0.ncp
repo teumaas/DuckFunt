@@ -30,43 +30,18 @@
       <Entity type="Class">
         <Name>IntroScreen</Name>
         <Access>Public</Access>
-        <Location left="1305" top="996" />
-        <Size width="301" height="655" />
+        <Location left="1306" top="996" />
+        <Size width="301" height="242" />
         <Collapsed>False</Collapsed>
-        <Member type="Field">private Rectangle spriteBatch</Member>
-        <Member type="Field">private SpriteBatch heroBatch</Member>
-        <Member type="Field">private Rectangle textBox</Member>
-        <Member type="Field">private Rectangle back</Member>
-        <Member type="Field">private Rectangle destRec</Member>
-        <Member type="Field">private Rectangle heroRec</Member>
-        <Member type="Field">private Texture2D pic</Member>
-        <Member type="Field">private Texture2D heroSheet</Member>
-        <Member type="Field">private SpriteFont font</Member>
-        <Member type="Field">private String text</Member>
-        <Member type="Field">private String parsedText</Member>
-        <Member type="Field">private String typedText</Member>
-        <Member type="Field">private SoundEffect snd</Member>
-        <Member type="Field">private Vector2 pos</Member>
-        <Member type="Field">private SoundEffectIntance soundEffectIntance</Member>
-        <Member type="Field">private double typedTextLength</Member>
-        <Member type="Field">private int delayInMilliseconds</Member>
-        <Member type="Field">private bool isDoneDrawing</Member>
-        <Member type="Field">private float elapsed</Member>
-        <Member type="Field">private float delay</Member>
-        <Member type="Field">private int frames</Member>
-        <Member type="Field">private int oneFrame</Member>
-        <Member type="Field">private int recWidth</Member>
-        <Member type="Field">private int recHeight</Member>
-        <Member type="Field">private int frameHeight</Member>
-        <Member type="Field">private int i</Member>
-        <Member type="Field">private byte R</Member>
-        <Member type="Field">private byte G</Member>
-        <Member type="Field">byte B</Member>
-        <Member type="Field">private Color color</Member>
+        <Member type="Field">private ShapeAnimated heroShape</Member>
+        <Member type="Field">private Label label</Member>
+        <Member type="Field">private string text</Member>
+        <Member type="Field">private Timer textTimer</Member>
+        <Member type="Field">private Timer shapeTimer</Member>
+        <Member type="Field">private DarkBackgroundAnimation backgroundAnimation</Member>
         <Member type="Constructor">public IntroScreen()</Member>
-        <Member type="Method">private void DrawBack()</Member>
-        <Member type="Method">private String parseText(String text)</Member>
-        <Member type="Method">public static double Delay(double milliseconds)</Member>
+        <Member type="Method">public void Update(GameTime gameTime)</Member>
+        <Member type="Method">public void Draw()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -560,7 +535,7 @@
       </Entity>
       <Entity type="Comment">
         <Text>TODO : clean it</Text>
-        <Location left="1411" top="1064" />
+        <Location left="1721" top="1441" />
         <Size width="160" height="75" />
       </Entity>
       <Entity type="Comment">
@@ -581,7 +556,7 @@
       <Entity type="Class">
         <Name>Label</Name>
         <Access>Public</Access>
-        <Location left="4542" top="1116" />
+        <Location left="4604" top="1089" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private string text</Member>
@@ -698,6 +673,7 @@
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Constructor">public Screen(Main main, GraphicsInfos graphics)</Member>
+        <Member type="Method">public void Update(InputState input)</Member>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>
