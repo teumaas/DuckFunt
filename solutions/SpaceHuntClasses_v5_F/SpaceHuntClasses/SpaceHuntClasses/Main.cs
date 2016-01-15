@@ -19,8 +19,8 @@ namespace SpaceHuntClasses
     /// This is the main type for your game
     /// </summary>
     /// 
-    enum GameState {Menu, InGame}
-    enum InputType { Wiimote, MouseKeyboard}
+    enum GameState { Menu, InGame }
+    enum InputType { Wiimote, MouseKeyboard }
 
     public class Main : Microsoft.Xna.Framework.Game
     {
@@ -40,19 +40,8 @@ namespace SpaceHuntClasses
         private Menu menu;
         public SpriteFont fontSize10;
         public SpriteFont fontSize14;
-
-        public enum GameState
-        {
-            InGame, //start game
-            Intro,
-            Menu,
-            Options, //Settings
-            Loading,
-            Exit, //Exit
-            Leaderboard, //Local Leaderboard
-            LbMenu,
-            Default
-        }
+        
+       
 
         public Main()
         {
@@ -60,7 +49,8 @@ namespace SpaceHuntClasses
             Content.RootDirectory = "Content";
             graphics.PreferredBackBufferWidth = 1920;
             graphics.PreferredBackBufferHeight = 1080;
-            state = GameState.Intro;
+           //state = GameState.LbMenu;
+
 
         }
 
@@ -71,7 +61,7 @@ namespace SpaceHuntClasses
             menuScreen = new MenuScreen(this, new GraphicsInfos(new Resolution(graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight), graphics.IsFullScreen));
             inputState = new InputState();
             state = GameState.Menu;
-            menu = new Menu(Content,graphics,spriteBatch);
+            menu = new Menu(Content, graphics, spriteBatch , 0);
             inputType = InputType.MouseKeyboard;
             //wiiMote.Connect();
             //wiiMote.SetLEDs(true, true, false, true);//test
@@ -106,9 +96,10 @@ namespace SpaceHuntClasses
             {
                 inputState.Update(Mouse.GetState(), Keyboard.GetState());
             }
+
             menu.Update();
-         //   menuScreen.Update(inputState, gameTime);
-            
+            //   menuScreen.Update(inputState, gameTime);
+
 
             base.Update(gameTime);
         }
@@ -120,24 +111,25 @@ namespace SpaceHuntClasses
 
             spriteBatch.Begin();
 
-            if(state == GameState.Menu)
-            {
-               // menuScreen.Draw(spriteBatch);
-                menu.MenuEnabled(spriteBatch);
-            }
-            if (state == GameState.LbMenu)
-            {
-                
-            }
-            if (state == GameState.Leaderboard)
-            {
-                
-            }
+            menu.Draw(spriteBatch);
+            //if (state == GameState.Menu)
+            //{
+            //     menuScreen.Draw(spriteBatch);
+            //    //menu.MenuEnabled(spriteBatch);
+            //}
+            //if (state == GameState.LbMenu)
+            //{
+
+            //}
+            //if (state == GameState.Leaderboard)
+            //{
+
+            //}
             CursorUpdater Crosshair = new CursorUpdater(); // Staat het programma toe muis coordinaten op te halen
             spriteBatch.Draw(crossHair, new Rectangle(Crosshair.GetCursX() - crossSize / 2, Crosshair.GetCursY() - crossSize / 2, crossSize, crossSize), Color.White);
-               
-           // test.Draw(gameTime);
-         //   spriteBatch.Draw(texture, new Rectangle(Mouse.GetState().X - 49, Mouse.GetState().Y - 8, 98, 16), Color.White);
+
+            // test.Draw(gameTime);
+            //   spriteBatch.Draw(texture, new Rectangle(Mouse.GetState().X - 49, Mouse.GetState().Y - 8, 98, 16), Color.White);
             spriteBatch.End();
             base.Draw(gameTime);
         }
@@ -172,7 +164,7 @@ namespace SpaceHuntClasses
             menuScreen.Initialize(new GraphicsInfos(new Resolution(graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight), graphics.IsFullScreen));// TODO : i can do : this.Initialize()
         }
 
-        
+
 
     }
 }

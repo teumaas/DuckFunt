@@ -91,7 +91,7 @@
     <Compile Include="Inputs\InputState.cs" />
     <Compile Include="Shapes\Labels\Label.cs" />
     <Compile Include="Shapes\Labels\LabelInteractive.cs" />
-    <Compile Include="TableDrawManager.cs" />
+    <Compile Include="TableManager.cs" />
     <Compile Include="Timer.cs" />
     <Compile Include="Shapes\Buttons\Button.cs" />
     <Compile Include="Screens\OptionScreen.cs" />
