@@ -31,8 +31,11 @@ namespace MenuMaking
         private TableManager TableDrawer;
         private HighScoresSaveManager HS;
         SaveData tempUserData;
+        private SaveData inputData;
+        private Vector2 stringSize;
         private List<SaveData> data;
         private bool done = false;
+
    //     private LeaderBoardMenu LeaderBoard;
       
         public LeaderBoardMenu(SpriteBatch spriteBoard, GraphicsDeviceManager graphDeviceMan, ContentManager contentMaster, Vector2 DrawLocation)
@@ -40,7 +43,7 @@ namespace MenuMaking
             gTime = new GameTime();
             this.SpriteBam = spriteBoard;
             Location = DrawLocation;
-            font = contentMaster.Load<SpriteFont>("ScoreFont");
+            font = contentMaster.Load<SpriteFont>("InputFont");
             oldButtonState = currentButtonState; 
             TableDrawer = new TableManager(graphDeviceMan, contentMaster,SpriteBam);
             HS = new HighScoresSaveManager("LeaderBoard_Savedata.1337");
@@ -96,9 +99,12 @@ namespace MenuMaking
                     message = @"'" + result + @"'" + " Press > again to confirm";
                     tempbool = true;
 
-                 }
+                    stringSize = font.MeasureString(message);
+                
+                }
                
             }
+
             else
             {
                 OnChar += 1;
@@ -110,6 +116,15 @@ namespace MenuMaking
                 result = result + temp;  
             }
             inCharArrray = 1;
+            if (tempbool)
+            {
+                MenuMaking.Menu.where = 2;
+            }
+            //if (OnChar == 3 && tempbool)
+            //{
+            //    Finalize();
+            //    MenuMaking.Menu.where = 2;
+            //}
         }
 
         void Finalize()
@@ -161,9 +176,9 @@ namespace MenuMaking
             //}
             //else
             //{
-                SpriteBam.DrawString(font, message, Location, Color.Red);
+                SpriteBam.DrawString(font, message, Location - stringSize/2, Color.Red);
           //  }
-            SpriteBam.DrawString(font, message, Location, Color.Red);
+            //SpriteBam.DrawString(font, message, Location, Color.Red);
             SpriteBam.End();
             after = Keyboard.GetState();
         }
@@ -173,14 +188,15 @@ namespace MenuMaking
             return final;
         }
 
-        public void PromptSave(SaveData userScore) //DONT CALL WITHIN DRAW it wil make the save file grow for each fps used.
+        public void PromptSave(SaveData userScore)
+            //DONT CALL WITHIN DRAW it wil make the save file grow for each fps used.
         {
-            
-           //this object.Draw(); HAS TO BE PRECALLED WITHIN A DRAW METHOD FOR THIS ONE TOT WORK
-      
+
+            //this object.Draw(); HAS TO BE PRECALLED WITHIN A DRAW METHOD FOR THIS ONE TOT WORK
+           
             if (final)
             {
-                data = HS.LoadHighScores("LeaderBoard_Savedata.1337");
+                data = HS.LoadHighScores();
                 userScore.playerName = result;
                 data.Add(userScore);
                 int templength = data.Count;
@@ -196,12 +212,23 @@ namespace MenuMaking
                         }
                     }
                 }
-                HS.Save(data);
+                inputData = userScore;
+                Save(userScore);
 
-               // TableDrawer.DrawTables(new Vector2(90, 20)); // Toggle the leaderboard
+            }
+        }
+
+        public void Save(SaveData finalScore) // Also only call once (even tough its duplicate protected, it WILL drop performance)Then again reading and writing on the system heave on users hdd
+        {
+            List<SaveData> bla = new List<SaveData>();
+            bla = HS.LoadHighScores();
+            for (int i = 0; i < bla.Count; i++)
+            {
+                if (bla[i].shotsFired != finalScore.shotsFired&& bla[i].kills != finalScore.shotsFired&& bla[i].time != finalScore.time)
+                {
+                    HS.Save(data);
                 }
-                 
-         //   }
+            }
         }
     }
 }

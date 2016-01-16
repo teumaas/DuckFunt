@@ -14,19 +14,14 @@ namespace MenuMaking
 {
     class HighScoresSaveManager
     {
-        public struct HighScoreData
-        {
-            public string playerName;
-            public decimal kills;
-            public decimal shotsFired;
-            public decimal rounds;
-            public TimeSpan time;
-        }
+        
         public static string path;
         public static SaveData data;
+        private string fileName;
 
         public HighScoresSaveManager(string filename)
         {
+            fileName = filename;
             data = new SaveData();
             path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, filename);
         } 
@@ -54,7 +49,7 @@ namespace MenuMaking
             }
         }
 
-        public List<Saveme> LoadHighScores(string filename)
+        public List<Saveme> LoadHighScores()
         {
             List<Saveme> data;
             FileStream stream = File.Open(path, FileMode.OpenOrCreate, FileAccess.Read);
@@ -67,7 +62,6 @@ namespace MenuMaking
             {
                 stream.Close();
                 List<Saveme> temp = new List<SaveData>(1);
-                
                 Saveme temp2 = new Saveme();
                 temp2.kills = 0;
                 temp2.rounds = 0;

@@ -88,7 +88,7 @@ namespace TableDrawer
             HighScoresSaveManager ScoreDevice = new HighScoresSaveManager("LeaderBoard_Savedata.1337");
           //  ScoreDevice.Save(hsList);
             hsList.Clear();
-            hsList = ScoreDevice.LoadHighScores("LeaderBoard_Savedata.1337");
+            hsList = ScoreDevice.LoadHighScores();
             spriba.Begin();
 
             spriba.DrawString(scoreFont, "Who", adjustedV2, Color.White);
@@ -160,7 +160,7 @@ namespace TableDrawer
               }
             backBtnSize.Y = backButtonSize;
             backBtnSize.X = backButtonSize;
-            Menu MenuForBG = new Menu(lclContent, graphics, spriba);
+            Menu MenuForBG = new Menu(lclContent, graphics, spriba , 2);
             if (screenwidth - ScoreboardWidest > 200)
             {
                 backBtnSize.Y = 150;
