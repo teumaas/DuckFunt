@@ -61,7 +61,7 @@ namespace SpaceHuntClasses
             menuScreen = new MenuScreen(this, new GraphicsInfos(new Resolution(graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight), graphics.IsFullScreen));
             inputState = new InputState();
             state = GameState.Menu;
-            menu = new Menu(Content, graphics, spriteBatch , 0);
+            menu = new Menu(Content, graphics, spriteBatch , 1);
             inputType = InputType.MouseKeyboard;
             //wiiMote.Connect();
             //wiiMote.SetLEDs(true, true, false, true);//test
