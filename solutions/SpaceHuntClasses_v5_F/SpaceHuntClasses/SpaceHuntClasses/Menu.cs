@@ -202,7 +202,7 @@ namespace MenuMaking
                     if (currentMouseState.Y > (startLocY + (i * 50)) && currentMouseState.Y < (startLocY + (i * 50) + 50))
                     {
                         //  this.Title = "You clicked: " + menuItems[i];
-                        LaunchItem(i);
+                      //  LaunchItem(i);
                         where = i;
                         //  boolMenuEnabled = false;
                         // OnMainMenuClick(i);
