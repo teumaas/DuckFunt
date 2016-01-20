@@ -65,6 +65,7 @@ namespace SpaceHuntClasses.Screens
         private Texture2D soundButtonTexture;
         private Texture2D fullscreenTexture;
         private Texture2D resolutionTexture_1920_1080;
+        private Texture2D resolutionTexture_1366_768;
         private Texture2D resolutionTexture_800_600;
 
         #endregion
@@ -107,10 +108,13 @@ namespace SpaceHuntClasses.Screens
             resolutionButtons = new List<ButtonCheckBoxResolution>();
             var b1 = new ButtonCheckBoxResolution(graphics, resolutionTexture_1920_1080, new Rectangle(40 + 5, 17 + 24, 15, 15), currentResolution.width == 1920, new Resolution(1920, 1080));
             var b2 = new ButtonCheckBoxResolution(graphics, resolutionTexture_800_600, new Rectangle(40 + 5, 17 + 40, 45, 25), currentResolution.width == 800, new Resolution(800, 600));
+            var b3 = new ButtonCheckBoxResolution(graphics, resolutionTexture_1366_768, new Rectangle(40 + 5, 17 + 56, 75, 35), currentResolution.width == 768, new Resolution(1366, 768));
             b1.Release += ResolutionButtonOnRelease;
             b2.Release += ResolutionButtonOnRelease;
+            b3.Release += ResolutionButtonOnRelease;
             resolutionButtons.Add(b1);
             resolutionButtons.Add(b2);
+            resolutionButtons.Add(b3);
             
 
             //AUDIO OPTION
@@ -147,6 +151,7 @@ namespace SpaceHuntClasses.Screens
             soundButtonTexture = main.Content.Load<Texture2D>("textures/buttons/generalSoundOptionButton2");
             videoButtonTexture = main.Content.Load<Texture2D>("textures/buttons/optionVideoButton");
             resolutionTexture_1920_1080 = main.Content.Load<Texture2D>("textures/buttons/resolutionOptionButton_1920_1080");
+            resolutionTexture_1366_768 = main.Content.Load<Texture2D>("textures/buttons/resolutionOptionButton_1366_768");
             resolutionTexture_800_600 = main.Content.Load<Texture2D>("textures/buttons/resolutionOptionButton_800_600");
             fullscreenTexture = main.Content.Load<Texture2D>("textures/buttons/fullscreenOptionButton");
             controlsButtonTexture = main.Content.Load<Texture2D>("textures/buttons/optionControlsButton");
