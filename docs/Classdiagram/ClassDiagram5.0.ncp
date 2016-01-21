@@ -76,11 +76,13 @@
         <Location left="932" top="996" />
         <Size width="327" height="655" />
         <Collapsed>False</Collapsed>
+        <Member type="Field">private Level currentLevel</Member>
         <Member type="Constructor">public GameScreen(Level level, LoadScreen loadScreen)</Member>
         <Member type="Method">public void Initialize()</Member>
         <Member type="Method">public void LoadContent()</Member>
         <Member type="Method">public void Update()</Member>
         <Member type="Method">public void Draw(SpriteBatch batch)</Member>
+        <Member type="Method">public void NewMethod()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -109,7 +111,7 @@
         <Name>Shape</Name>
         <Access>Public</Access>
         <Location left="3710" top="683" />
-        <Size width="266" height="302" />
+        <Size width="425" height="302" />
         <Collapsed>False</Collapsed>
         <Member type="Field">protected Texture2D texture</Member>
         <Member type="Field">public Rectangle rectangle</Member>
@@ -142,7 +144,7 @@
         <Name>ShapeInteractive</Name>
         <Access>Public</Access>
         <Location left="4026" top="1075" />
-        <Size width="212" height="230" />
+        <Size width="456" height="230" />
         <Collapsed>False</Collapsed>
         <Member type="Property">public InteractionState state { get; set; }</Member>
         <Member type="Event">public event InteractionEventHandler Click</Member>
@@ -559,7 +561,7 @@
         <Size width="160" height="75" />
       </Entity>
       <Entity type="Comment">
-        <Text>TODO : check if we really need this class</Text>
+        <Text>TODO : update </Text>
         <Location left="3400" top="1177" />
         <Size width="160" height="75" />
       </Entity>
@@ -571,13 +573,13 @@
       <Entity type="Class">
         <Name>Label</Name>
         <Access>Public</Access>
-        <Location left="4412" top="704" />
+        <Location left="4727" top="694" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private string text</Member>
         <Member type="Field">private SpriteFont font</Member>
         <Member type="Field">private Vector2 location</Member>
-        <Member type="Method">public void Draw(SpriteBatch batch)</Member>
+        <Member type="Method">public virtual void Draw(SpriteBatch batch)</Member>
         <Member type="Constructor">public Label(SpriteFont font, Vector2 location, string text)</Member>
         <Modifier>None</Modifier>
       </Entity>
@@ -699,7 +701,7 @@
       </Entity>
       <Entity type="Comment">
         <Text>TODO : define whre do i need this class</Text>
-        <Location left="4412" top="788" />
+        <Location left="5124" top="797" />
         <Size width="160" height="75" />
       </Entity>
       <Entity type="Class">
@@ -721,9 +723,97 @@
         <Member type="Method">public void Initialize()</Member>
         <Member type="Method">public void Update()</Member>
         <Member type="Method">public void Draw(SpriteBatch batch)</Member>
-        <Member type="Method">public void StartGame(object sender, EventArgs e)</Member>
+        <Member type="Method">private void StartGame(Level level)</Member>
         <Member type="Method">public void NewMethod()</Member>
         <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Enum">
+        <Name>GameMode</Name>
+        <Access>Public</Access>
+        <Location left="2353" top="1534" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>Easy</Value>
+        <Value>Medium</Value>
+        <Value>Hard</Value>
+      </Entity>
+      <Entity type="Class">
+        <Name>Level</Name>
+        <Access>Public</Access>
+        <Location left="1292" top="2259" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">GameMode gameMode</Member>
+        <Member type="Field">Texture2D texture</Member>
+        <Member type="Field">int newField</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Wave</Name>
+        <Access>Public</Access>
+        <Location left="1036" top="2237" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ButtonLevel</Name>
+        <Access>Public</Access>
+        <Location left="5256" top="1814" />
+        <Size width="503" height="298" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Button startButton</Member>
+        <Member type="Field">private Texture2D bacckgroundTexture</Member>
+        <Member type="Field">private Label modeLabel</Member>
+        <Member type="Field">private Label storyLabel</Member>
+        <Member type="Field">private Label titleLabel</Member>
+        <Member type="Constructor">public ButtonLevel(GraphicsInfos graphics, Rectangle rectangle, SpriteFont titleFont, SpriteFont font)</Member>
+        <Member type="Method">public void StartButtonOnRelease(object sender, InteractionEventArgs e)</Member>
+        <Member type="Event">public event EventHandler StartGame</Member>
+        <Member type="Property">public Level level { get; set; }</Member>
+        <Member type="Method">public void ShowInfos()</Member>
+        <Member type="Method">public void HideInfos()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ButtonLevelState</Name>
+        <Access>Public</Access>
+        <Location left="6092" top="1918" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ButtonMenu</Name>
+        <Access>Public</Access>
+        <Location left="4740" top="2099" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Color textColor</Member>
+        <Member type="Field">private Color backgroundColor</Member>
+        <Member type="Constructor">public ButtonMenu(GraphicsInfos graphics, Rectangle rectangle, string text, Color textColor, Color backgroundColor)</Member>
+        <Member type="Method">public void Draw()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Comment">
+        <Text>TODO : update </Text>
+        <Location left="6489" top="2096" />
+        <Size width="160" height="75" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>TODO : update </Text>
+        <Location left="6489" top="2096" />
+        <Size width="160" height="75" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>TODO : update </Text>
+        <Location left="6478" top="2287" />
+        <Size width="160" height="75" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>TODO : update </Text>
+        <Location left="6489" top="2287" />
+        <Size width="160" height="75" />
       </Entity>
     </Entities>
     <Relationships>
@@ -1044,6 +1134,14 @@
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Composition</AssociationType>
+      </Relationship>
+      <Relationship type="Generalization" first="65" second="21">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="67" second="49">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
       </Relationship>
     </Relationships>
   </ProjectItem>
