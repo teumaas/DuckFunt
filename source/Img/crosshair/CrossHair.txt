@@ -1,0 +1,9 @@
+        public MouseState mousestate;
+        int crossHairSize;
+
+
+        crossHairSize = 150;
+
+spriteBatch.Draw(texture, new Rectangle(Mouse.GetState().X - (crossHairSize / 2), Mouse.GetState().Y - (crossHairSize / 2), crossHairSize, crossHairSize), Color.White);
+
+place "crossHair.pdn" and "crossHair.png" in ...\SpaceHuntClasses\SpaceHuntClassesContent

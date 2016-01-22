@@ -20,6 +20,7 @@ namespace SpaceHuntClasses
         private Main main;
         private OptionScreen optionScreen;
         private LevelSelectionScreen levelScreen;
+        private CreditScreen creditScreen;
         private MenuState menuState;
         private MenuState newMenuState;
         private List<Button> menuButtons;
@@ -31,7 +32,8 @@ namespace SpaceHuntClasses
             this.main = main;
             optionScreen = new OptionScreen(main, graphics);
             levelScreen = new LevelSelectionScreen(main, graphics);
-            menuState = MenuState.Option;
+            creditScreen = new CreditScreen(main, graphics);
+            menuState = MenuState.LevelSelection;
             backgroundAnimation = new DarkBackgroundAnimation(graphics, 0.01f);
             Initialize(graphics);
         }
@@ -124,9 +126,9 @@ namespace SpaceHuntClasses
             {
                 optionScreen.Draw(batch);
             }
-            else
+            else if (menuState == MenuState.Credit)
             {
-
+                creditScreen.Draw(batch);
             }
 
             if (backgroundAnimation.active)

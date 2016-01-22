@@ -71,7 +71,7 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Net" />
     <Reference Include="WiimoteLib">
-      <HintPath>..\..\..\..\wii_ressources\WiimotLib_1.7\WiimotLib_1.7\WiimoteLib.dll</HintPath>
+      <HintPath>..\..\..\..\tools\WiimoteLib_1.8\WiimoteLib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -79,6 +79,7 @@
     <Compile Include="MessageBoxs\MessageBoxBack.cs" />
     <Compile Include="MessageBoxs\MessageBoxCountdown.cs" />
     <Compile Include="MessageBoxs\MessageBoxYesNo.cs" />
+    <Compile Include="Screens\CreditScreen.cs" />
     <Compile Include="Screens\IntroScreen.cs" />
     <Compile Include="Screens\IScreen.cs" />
     <Compile Include="Level.cs" />
