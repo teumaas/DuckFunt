@@ -79,6 +79,7 @@
     <Compile Include="MessageBoxs\MessageBoxBack.cs" />
     <Compile Include="MessageBoxs\MessageBoxCountdown.cs" />
     <Compile Include="MessageBoxs\MessageBoxYesNo.cs" />
+    <Compile Include="Screens\CreditScreen.cs" />
     <Compile Include="Screens\IntroScreen.cs" />
     <Compile Include="Screens\IScreen.cs" />
     <Compile Include="Level.cs" />
