@@ -1,0 +1,163 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Microsoft.Xna.Framework;
+//using System.Random;
+
+namespace EnemyDance
+{
+    class EnemyMovement
+    {
+        public Vector2 curLoc;
+        private Random random;
+        private Vector2 curVel;
+        private Vector2 screensize;
+      //  private bool updown;
+        //private bool leftright;
+        private int moveInPx;
+       // private int bounceInStroke;
+        
+        public EnemyMovement(Vector2 screensize)
+        {
+            random = new Random();
+         //   RandomizeDir();
+            this.screensize = screensize;
+            moveInPx = RandomMovementLength();
+            curLoc = GenerateRandom();
+            // int randomNumber = random.Next(0, 100);
+        }
+
+        //private void RandomizeDir()
+        //{
+        //    updown = RandomBool();
+        //    leftright = RandomBool();
+        //}
+
+        public Vector2 Location()
+        {
+            return curLoc;
+        }
+
+        public void Update()
+        {
+            //if (bounceInStroke > 2)
+            //{
+            //    //bounceInStroke = 0;
+            //   // updown = leftright;
+            //   // leftright = RandomBool();
+            //    //RandomizeDir();
+            //    moveInPx = RandomMovementLength();
+            //}
+            CheckBounds();
+            if (curLoc == null)
+            {
+                curLoc = GenerateRandom();
+              }
+            if (moveInPx > 1)
+            {
+                
+               // moveInPx -= speed;
+                //if (updown == true)
+                //{
+                //    curLoc.Y -= speed;
+                //}
+                //else
+                //{
+                //    curLoc.Y += speed;
+                //}
+                //if (leftright)
+                //{
+                //    curLoc.X -= speed;
+                //}
+                //else
+                //{
+                //    curLoc.X += speed;
+                //}
+            }
+            else
+            {
+             //       RandomizeDir();
+                moveInPx = RandomMovementLength();
+               // bounceInStroke = 0; 
+            }
+           
+        }
+        
+        public void SetStartLoc(Vector2 startLoc) // Needs to be called before update
+        {
+            curLoc = startLoc;
+        }
+
+        Vector2 NewPos(Vector2 vel, Vector2 pos)
+        {
+            return vel + pos;
+        }
+
+        Vector2 RandomDirVel()
+        {
+        //    degree = (float)(amountOfPx / 360) * i;
+            int degree = random.Next(1, 360);
+            
+            Vector2 temp = new Vector2((float)Math.Cos(degree), (float)Math.Sin(degree));
+            curVel = temp;
+            return temp;
+
+        }
+
+        private Vector2 GenerateRandom()
+        {
+            return new Vector2(random.Next(1, (int)screensize.X), random.Next(1, (int)screensize.Y));
+        }
+
+        private int RandomMovementLength()
+        {
+            return random.Next(20, 200);
+        }
+
+        private bool RandomBool()
+        {
+            int temp = random.Next(1, 2);
+            if (temp == 1)
+            {
+                return true;
+            }
+            else if(temp == 2)
+            {
+                return false;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void CheckBounds()
+        {
+            if (curLoc.X > screensize.X || curLoc.Y > screensize.Y || curLoc.X < 0 || curLoc.Y < 0)
+            {
+                RandomDirVel();
+            }
+            //if (curLoc.X > screensize.X)
+            //{
+            //    leftright = true;
+            //    bounceInStroke++;
+            //}
+            //if (curLoc.X < 1)
+            //{
+            //    leftright = false;
+            //    bounceInStroke++;
+            //}
+            //if (curLoc.Y < 1)
+            //{
+            //    updown = false;
+            //    bounceInStroke++;
+            //}
+            //if (curLoc.Y > screensize.Y)
+            //{
+            //    updown = true;
+            //    bounceInStroke++;
+            //}
+        }
+    }
+}
