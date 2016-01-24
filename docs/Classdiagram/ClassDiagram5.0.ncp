@@ -53,7 +53,7 @@
         <Name>SpaceHunt</Name>
         <Access>Public</Access>
         <Location left="2947" top="268" />
-        <Size width="233" height="298" />
+        <Size width="233" height="315" />
         <Collapsed>False</Collapsed>
         <Member type="Field">public GraphicsDeviceManager graphics</Member>
         <Member type="Field">public SpriteBatch spriteBatch</Member>
@@ -62,6 +62,7 @@
         <Member type="Field">public IntroScreen introScreen</Member>
         <Member type="Field">public options GameState</Member>
         <Member type="Field">private InputeState inputState</Member>
+        <Member type="Field">SaveManager saveManager</Member>
         <Member type="Constructor">public SpaceHunt()</Member>
         <Member type="Method">protected override void Initialize(GraphicsInfos graphicsInfos)</Member>
         <Member type="Method">protected override void LoadContent()</Member>
@@ -73,10 +74,11 @@
       <Entity type="Class">
         <Name>GameScreen</Name>
         <Access>Public</Access>
-        <Location left="932" top="996" />
+        <Location left="933" top="996" />
         <Size width="327" height="655" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private Level currentLevel</Member>
+        <Member type="Field">private SoundEffect m95Sound</Member>
         <Member type="Constructor">public GameScreen(Level level, LoadScreen loadScreen)</Member>
         <Member type="Method">public void Initialize()</Member>
         <Member type="Method">public void LoadContent()</Member>
@@ -97,6 +99,7 @@
         <Member type="Field">private MenuState newMenuState</Member>
         <Member type="Field">private List&lt;Button&gt; menuButtons</Member>
         <Member type="Field">private Timer backgroundTimer</Member>
+        <Member type="Field">private SoundEffect backgroundSound</Member>
         <Member type="Constructor">public MenuScreen(SpaceHunt spaceHunt)</Member>
         <Member type="Method">public override void Initialize(GraphicsInfos graphics)</Member>
         <Member type="Method">private void InitButtons()</Member>
@@ -730,7 +733,7 @@
       <Entity type="Enum">
         <Name>GameMode</Name>
         <Access>Public</Access>
-        <Location left="2353" top="1534" />
+        <Location left="2694" top="1650" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Value>Easy</Value>
@@ -740,7 +743,7 @@
       <Entity type="Class">
         <Name>Level</Name>
         <Access>Public</Access>
-        <Location left="1292" top="2259" />
+        <Location left="1360" top="2365" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">GameMode gameMode</Member>
@@ -815,6 +818,40 @@
         <Location left="6489" top="2287" />
         <Size width="160" height="75" />
       </Entity>
+      <Entity type="Class">
+        <Name>GameData</Name>
+        <Access>Public</Access>
+        <Location left="4419" top="683" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">GameMode gameMode</Member>
+        <Member type="Constructor">public GameData()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GameDataSaveManager</Name>
+        <Access>Public</Access>
+        <Location left="1566" top="683" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CreditScreen</Name>
+        <Access>Public</Access>
+        <Location left="2222" top="1534" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LeaderboardScreen</Name>
+        <Access>Public</Access>
+        <Location left="2434" top="1534" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
     </Entities>
     <Relationships>
       <Relationship type="Generalization" first="35" second="5">
@@ -846,7 +883,7 @@
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
           <X>3095</X>
-          <Y>591</Y>
+          <Y>608</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Aggregation</AssociationType>
@@ -856,7 +893,7 @@
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
           <X>3095</X>
-          <Y>591</Y>
+          <Y>608</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Aggregation</AssociationType>
@@ -866,7 +903,7 @@
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
           <X>3045</X>
-          <Y>591</Y>
+          <Y>608</Y>
         </BendPoint>
         <BendPoint relativeToStartShape="False">
           <X>2961</X>
@@ -880,7 +917,7 @@
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
           <X>3045</X>
-          <Y>591</Y>
+          <Y>608</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Composition</AssociationType>
@@ -890,7 +927,7 @@
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
           <X>3095</X>
-          <Y>591</Y>
+          <Y>608</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Aggregation</AssociationType>
@@ -932,7 +969,7 @@
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
           <X>3045</X>
-          <Y>591</Y>
+          <Y>608</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Composition</AssociationType>
@@ -941,7 +978,7 @@
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>1073</X>
+          <X>1074</X>
           <Y>1698</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
@@ -961,7 +998,7 @@
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>1048</X>
+          <X>1049</X>
           <Y>1698</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
@@ -997,7 +1034,7 @@
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>1111</X>
+          <X>1112</X>
           <Y>1708</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
@@ -1058,7 +1095,7 @@
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
           <X>3045</X>
-          <Y>592</Y>
+          <Y>609</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Composition</AssociationType>
@@ -1142,6 +1179,22 @@
       <Relationship type="Generalization" first="67" second="49">
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="2" second="73">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="4" second="74">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
       </Relationship>
     </Relationships>
   </ProjectItem>
