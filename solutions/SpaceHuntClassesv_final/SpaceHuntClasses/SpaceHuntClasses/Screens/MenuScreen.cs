@@ -1,0 +1,215 @@
+﻿using Microsoft.Xna.Framework;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using SpaceHuntClasses.Shapes;
+using SpaceHuntClasses.Buttons;
+using SpaceHuntClasses.Shapes.Labels;
+using SpaceHuntClasses.Shapes;
+using SpaceHuntClasses.MessageBoxs;
+using SpaceHuntClasses.Shapes.Buttons;
+using Microsoft.Xna.Framework.Audio;
+
+namespace SpaceHuntClasses
+{
+    enum MenuState {Main, LevelSelection, Leaderboard, Option, Credit}
+
+    class MenuScreen : IScreen
+    {
+        private Main main;
+        private OptionScreen optionScreen;
+        private LevelSelectionScreen levelScreen;
+        private CreditScreen creditScreen;
+        private MenuState menuState;
+        private MenuState newMenuState;
+        private List<Button> menuButtons;
+        private DarkBackgroundAnimation backgroundAnimation;
+
+        private ButtonMenu startButton;
+        private ButtonMenu leaderboardButton;
+        private ButtonMenu optionButton;
+        private ButtonMenu creditsButton;
+        private ButtonMenu exitButton;
+
+        private Shape backgroundShape;
+
+        private Texture2D backgroundTexture;
+
+        private SoundEffect backgroundSound;
+
+
+        public MenuScreen(Main main, GraphicsInfos graphics)
+        {
+            this.main = main;
+            optionScreen = new OptionScreen(main, graphics);
+            levelScreen = new LevelSelectionScreen(main, graphics);
+            creditScreen = new CreditScreen(main, graphics);
+            menuState = MenuState.Main;
+            backgroundAnimation = new DarkBackgroundAnimation(graphics, 0.1f);
+            Initialize(graphics);
+        }
+
+        public void Initialize(GraphicsInfos graphics)
+        {
+            LoadContent();
+
+            optionScreen.Initialize(graphics);
+
+            backgroundShape = new Shape(graphics, backgroundTexture, new Rectangle(0, 0, graphics.resolution.width, graphics.resolution.height));
+
+            //var tc = new Color(65, 103, 136, 200); // text color
+            var tc = Color.Black;
+            var bc = new Color(0, 244, 200, 180); // background color
+            Texture2D bt = Utility.GetTexture(bc); // background texture
+
+            startButton = new ButtonMenu(graphics, new Rectangle(40, 30, 0, 0), main.fontSize14, "Start Game", tc, bt);
+            leaderboardButton = new ButtonMenu(graphics, new Rectangle(40, 40, 0, 0), main.fontSize14, "Leaderboard", tc, bt);
+            optionButton = new ButtonMenu(graphics, new Rectangle(40, 50, 0, 0), main.fontSize14, "Option", tc, bt);
+            creditsButton = new ButtonMenu(graphics, new Rectangle(40, 60, 0, 0), main.fontSize14, "Credits", tc, bt);
+            exitButton = new ButtonMenu(graphics, new Rectangle(40, 70, 0, 0), main.fontSize14, "Exit", tc, bt);
+
+            startButton.Release += StartButtonOnRelease;
+            leaderboardButton.Release += LeaderboardButtonOnRelease;
+            optionButton.Release += OptionButtonOnRelease;
+            creditsButton.Release += CrediButtonOnRelease;
+            exitButton.Release += ExitButtonOnRelease;
+
+            //backgroundSound.Play();
+        }
+
+
+        public void LoadContent()
+        {
+            backgroundTexture = main.Content.Load<Texture2D>("textures/backgrounds/backgroundLoadScreen");
+            backgroundSound = main.Content.Load<SoundEffect>("audios/menuBackgroundSound");
+        }
+
+        public void MainButtonOnRelease(object sender, InteractionEventArgs e)
+        {
+            StartBackgroundAnimation();
+            //menuState = MenuState.Option;
+            newMenuState = MenuState.Option;
+        }
+        
+        private void StartBackgroundAnimation()
+        {
+            backgroundAnimation.Start();
+        }
+
+        public void Update(InputState input, GameTime gameTime)
+        {
+            if(input.backControl == ControlState.Pressed && menuState != MenuState.Main && !backgroundAnimation.active)
+            {
+                newMenuState = MenuState.Main;
+                StartBackgroundAnimation();
+            }
+
+            if(menuState == MenuState.Main)
+            {
+                if (!backgroundAnimation.active)
+                {
+                    startButton.Update(input, gameTime);
+                    leaderboardButton.Update(input, gameTime);
+                    optionButton.Update(input, gameTime);
+                    creditsButton.Update(input, gameTime);
+                    exitButton.Update(input, gameTime);
+                }
+            }           
+            else if(menuState == MenuState.LevelSelection)
+            {
+                levelScreen.Update(input, gameTime);
+            }
+            else if(menuState == MenuState.Leaderboard)
+            {
+
+            }
+            else if(menuState == MenuState.Option)
+            {
+                optionScreen.Update(input, gameTime);
+            }
+            else if (menuState == MenuState.Credit)
+            {
+                creditScreen.Update(input, gameTime);
+            }
+
+            if(backgroundAnimation.active)
+            {
+                backgroundAnimation.Update();
+                if(backgroundAnimation.paused)
+                {
+                    backgroundAnimation.ReverseVelocity();
+                    backgroundAnimation.Resume();
+                    menuState = newMenuState;
+                }
+            }
+
+        }
+
+        public void Draw(SpriteBatch batch) 
+        {
+            if (menuState == MenuState.Main)
+            {
+                backgroundShape.Draw(batch);
+                startButton.Draw(batch);
+                leaderboardButton.Draw(batch);
+                optionButton.Draw(batch);
+                creditsButton.Draw(batch);
+                exitButton.Draw(batch);
+            }
+            else if (menuState == MenuState.LevelSelection)
+            {
+                levelScreen.Draw(batch);
+            }
+            else if(menuState == MenuState.Leaderboard)
+            {
+
+            }
+            else if (menuState == MenuState.Option)
+            {
+                optionScreen.Draw(batch);
+            }
+            else if(menuState == MenuState.Credit)
+            {
+                creditScreen.Draw(batch);
+            }
+
+            if (backgroundAnimation.active)
+            {
+                backgroundAnimation.Draw(batch);
+            }
+
+        }
+
+        public void StartButtonOnRelease(object sender, InteractionEventArgs e)
+        {
+            newMenuState = MenuState.LevelSelection;
+            StartBackgroundAnimation();
+        }
+
+        public void LeaderboardButtonOnRelease(object sender, InteractionEventArgs e)
+        {
+            newMenuState = MenuState.Leaderboard;
+            StartBackgroundAnimation();
+        }
+
+        public void OptionButtonOnRelease(object sender, InteractionEventArgs e)
+        {
+            newMenuState = MenuState.Option;
+            StartBackgroundAnimation();
+        }
+
+        public void CrediButtonOnRelease(object sender, InteractionEventArgs e)
+        {
+            newMenuState = MenuState.Credit;
+            StartBackgroundAnimation();
+        }
+
+        public void ExitButtonOnRelease(object sender, InteractionEventArgs e)
+        {
+            main.Exit();
+        }
+    }
+}
